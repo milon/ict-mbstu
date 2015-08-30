@@ -19,7 +19,5 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 
 // Admin
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
-	Route::get('/', function(){
-		return 'Admin Panel';
-	});
+	Route::get('/', 'DashboardController@index');
 });
