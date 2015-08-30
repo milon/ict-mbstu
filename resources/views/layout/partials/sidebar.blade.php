@@ -3,15 +3,15 @@
 
 		<ul class="widget widget-menu unstyled">
 			<li class="active">
-				<a href="index.html">
+				<a href="{{ url('/admin') }}">
 					<i class="menu-icon icon-dashboard"></i>
 					Dashboard
 				</a>
 			</li>
 			<li>
-				<a href="activity.html">
+				<a href="{{ url('admin/alumni') }}">
 					<i class="menu-icon icon-bullhorn"></i>
-					News Feed
+					Alumni
 				</a>
 			</li>
 			<li>
