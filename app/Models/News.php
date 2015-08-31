@@ -13,4 +13,6 @@ class News extends Model
     	'description',
     	'published_at'
     ];
+
+    public $dates = ['published_at', 'created_at', 'updated_at'];
 }

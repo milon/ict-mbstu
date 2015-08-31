@@ -42,7 +42,7 @@
 	</li>
 
 	<li class="list-group-item">
-		<a href="#">
+		<a href="{{ url('/admin/news') }}">
 			<i class="fa fa-newspaper-o"></i>
 			News
 		</a>

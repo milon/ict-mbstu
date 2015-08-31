@@ -4,6 +4,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', function() {
+	return redirect('/');
+});
+
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
@@ -23,5 +27,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::get('/', 'DashboardController@index');
 
     Route::resource('alumni', 'Admin\AlumniController');
+    Route::resource('news', 'Admin\NewsController');
 
 });

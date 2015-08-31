@@ -14,4 +14,10 @@
         "pagingType": "simple_numbers"
     });
 
+    //datepicker
+    jQuery.fn.dataTable && $('.date-picker').datepicker({
+        autoclose: true,
+        format: 'yyyy-mm-dd'
+    });
+
 })();
