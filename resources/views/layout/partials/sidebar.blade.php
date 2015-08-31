@@ -14,7 +14,7 @@
 	</li>
 
 	<li class="list-group-item">
-		<a href="#">
+		<a href="{{ url('/admin/research_area') }}">
 			<i class="fa fa-map-o"></i> 
 			Research Area
 		</a>
