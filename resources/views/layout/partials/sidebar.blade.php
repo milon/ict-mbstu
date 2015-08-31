@@ -28,7 +28,7 @@
 	</li>
 
 	<li class="list-group-item">
-		<a href="#">
+		<a href="{{ url('/admin/course') }}">
 			<i class="fa fa-file-text-o"></i>
 			Course
 		</a>

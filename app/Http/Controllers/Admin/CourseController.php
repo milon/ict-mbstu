@@ -7,10 +7,26 @@ use App\Helpers\HtmlEditor\HtmlEditor;
 use App\Http\Requests\CourseRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
+use Laracasts\Flash\Flash;
 
 class CourseController extends Controller
 {
     protected $htmlEditor;
+
+    protected $semesterList = [
+        '' => 'Select semester',
+        1  => '1st year 1st semester',
+        2  => '1st year 2nd semester',
+        3  => '2nd year 1st semester',
+        4  => '2nd year 2nd semester',
+        5  => '3rd year 1st semester',
+        6  => '3rd year 2nd semester',
+        7  => '4th year 1st semester',
+        8  => '4th year 2nd semester',
+        9  => 'Masters 1st semester',
+        10 => 'Masters 2nd semester',
+        11 => 'Masters 3rd semester',
+    ];
 
     public function __construct(HtmlEditor $htmlEditor)
     {
@@ -25,8 +41,9 @@ class CourseController extends Controller
     public function index()
     {
         $courseList = Course::all();
+        $semesterList = $this->semesterList;
 
-        return view('admin.course.list', compact('courseList'));
+        return view('admin.course.list', compact('courseList', 'semesterList'));
     }
 
     /**
@@ -36,7 +53,9 @@ class CourseController extends Controller
      */
     public function create()
     {
-        //
+        $semesterList = $this->semesterList;
+
+        return view('admin.course.create', compact('semesterList'));
     }
 
     /**
@@ -47,7 +66,16 @@ class CourseController extends Controller
      */
     public function store(CourseRequest $request)
     {
-        //
+        Course::create([
+            'code'        => $request->code,
+            'name'        => $request->name,
+            'semester'    => $request->semester,
+            'credit'      => $request-> credit,
+            'description' => e($this->htmlEditor->parseHtml($request->description))
+        ]);
+
+        Flash::success('Course created successfully.');
+        return redirect('/admin/course');
     }
 
     /**
@@ -58,7 +86,10 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        //
+        $course = Course::find($id);
+        $semesterList = $this->semesterList;
+
+        return view('admin.course.show', compact('course', 'semesterList'));
     }
 
     /**
@@ -69,7 +100,10 @@ class CourseController extends Controller
      */
     public function edit($id)
     {
-        //
+        $course = Course::find($id);
+        $semesterList = $this->semesterList;
+
+        return view('admin.course.edit', compact('course', 'semesterList'));
     }
 
     /**
@@ -81,7 +115,17 @@ class CourseController extends Controller
      */
     public function update(CourseRequest $request, $id)
     {
-        //
+        $course = Course::find($id);
+        $course->update([
+            'code'        => $request->code,
+            'name'        => $request->name,
+            'semester'    => $request->semester,
+            'credit'      => $request-> credit,
+            'description' => e($this->htmlEditor->parseHtml($request->description))
+        ]);
+
+        Flash::success('Course updated successfully.');
+        return redirect("/admin/course/$id");
     }
 
     /**
@@ -92,6 +136,11 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = Course::find($id);
+        $course->delete();
+
+        Flash::success('Course deleted successfully.');
+        return redirect('/admin/course');
     }
+
 }
