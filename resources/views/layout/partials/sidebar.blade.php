@@ -7,7 +7,7 @@
 	</li>
 
 	<li class="list-group-item">
-		<a href="#">
+		<a href="{{ url('/admin/faculty') }}">
 			<i class="fa fa-graduation-cap"></i>
 			Faculty
 		</a>
