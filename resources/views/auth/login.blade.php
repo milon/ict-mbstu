@@ -1,50 +1,47 @@
-@extends('layout.login')
+@extends('layout.master')
 
 @section('content')
-	<div class="row">
-		<div class="module module-login span4 offset4">
+	<h1>Sign In</h1>
+    <hr/>
 
-			{!! Form::open(['url' => 'auth/login', 'class' => 'form-vertical']) !!}
-				<div class="module-head">
-					<h3>Sign In</h3>
-				</div>
-				
-				@if($errors->has())
-				    <div class="alert alert-danger alert-dismissable">
-				        <button type="button" class="close" aria-label="Close" data-dismiss="alert">
-				            <span aria-hidden="true">&times;</span>
-				        </button>
-				        <ul>
-				            @foreach($errors->all() as $error)
-				                <li> {{$error}} </li>
-				            @endforeach
-				        </ul>
-				    </div>
-				@endif
+    @include('flash::message')
 
-				<div class="module-body">
-					<div class="control-group">
-						<div class="controls row-fluid">
-							<input class="span12" type="text" name="email" id="inputEmail" value="{{ old('email') }}" placeholder="Email Address">
-						</div>
-					</div>
-					<div class="control-group">
-						<div class="controls row-fluid">
-							<input class="span12" type="password" name="password" id="inputPassword" placeholder="Password">
-						</div>
-					</div>
-				</div>
-				<div class="module-foot">
-					<div class="control-group">
-						<div class="controls clearfix">
-							<button type="submit" class="btn btn-primary pull-right">Login</button>
-							<label class="checkbox">
-								<input type="checkbox" name="remember"> Remember me
-							</label>
-						</div>
-					</div>
-				</div>
-			{!! Form::close() !!}
-		</div>
-	</div>
+    {!! Form::open(['url' => '/auth/login', 'class' => 'form-horizontal', 'role' => 'form']) !!}
+        <!-- Email Field -->
+        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+            {!! Form::label('email', 'Email Address', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-6">
+                {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                <span class="help-block text-danger">
+                    {{ $errors -> first('email') }}
+                </span>
+            </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+            {!! Form::label('password', 'Password', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-6">
+                {!! Form::password('password', ['class' => 'form-control']) !!}
+                <span class="help-block text-danger">
+                        {{ $errors -> first('password') }}
+                    </span>
+            </div>
+        </div>
+
+        <!-- remember_me Field -->
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-3">
+                {!! Form::label('remember', 'Remember me', [] ) !!}
+                {!! Form::checkbox('remember', 1, null, ['class' => 'pull-left remember']) !!}
+            </div>
+        </div>
+
+        <!-- Log In! Field -->
+        <div class="form-group">
+            <div class="col-sm-offset-3 col-sm-5">
+                {!! Form::submit('Sign In', ['class' => 'btn btn-primary']) !!}
+            </div>
+        </div>
+    {!! Form::close() !!}
 @endsection

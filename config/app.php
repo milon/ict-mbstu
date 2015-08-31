@@ -144,10 +144,13 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        App\Providers\HtmlEditorServiceProvider::class,
+
         /*
          * Third Party Service Providers...
          */
         Collective\Html\HtmlServiceProvider::class,
+        Laracasts\Flash\FlashServiceProvider::class,
 
     ],
 
@@ -198,9 +201,10 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
         //Third Party Facades
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
-
+        'Form'      => Collective\Html\FormFacade::class,
+        'Html'      => Collective\Html\HtmlFacade::class,
+        'Flash'     => Laracasts\Flash\Flash::class,
+        
     ],
 
 ];

@@ -13,6 +13,7 @@ class Alumni extends Model
     	'student_id',
     	'degree',
     	'passing_year',
+        'phone',
     	'email',
     	'website',
     	'description'

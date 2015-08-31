@@ -4,12 +4,20 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Alumni;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Helpers\HtmlEditor\HtmlEditor;
+use App\Http\Requests\AlumniRequest;
 use App\Http\Controllers\Controller;
+use Laracasts\Flash\Flash;
 
 class AlumniController extends Controller
 {
+    protected $htmlEditor;
+
+    public function __construct(HtmlEditor $htmlEditor)
+    {
+        $this->htmlEditor = $htmlEditor;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -29,7 +37,12 @@ class AlumniController extends Controller
      */
     public function create()
     {
-        //
+        $degreeList = [
+            'BSc Engineering' => 'BSc Engineering',
+            'MSc Engineering' => 'MSc Engineering'
+        ];
+
+        return view('admin.alumni.create', compact('degreeList'));
     }
 
     /**
@@ -38,9 +51,22 @@ class AlumniController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(AlumniRequest $request)
     {
-        //
+        //return $request->all();
+        Alumni::create([
+            'name'         => $request->name,
+            'student_id'   => $request->student_id,
+            'degree'       => $request->degree,
+            'passing_year' => $request->passing_year,
+            'email'        => $request->email,
+            'phone'        => $request->phone,
+            'website'      => $request->website,
+            'description'  => e($this->htmlEditor->parseHtml($request->description))
+        ]);
+
+        Flash::success('Alumni added successfully.');
+        return redirect('/admin/alumni');
     }
 
     /**
@@ -51,7 +77,9 @@ class AlumniController extends Controller
      */
     public function show($id)
     {
-        //
+        $alumni = Alumni::find($id);
+
+        return view('admin.alumni.show', compact('alumni'));
     }
 
     /**
@@ -62,7 +90,13 @@ class AlumniController extends Controller
      */
     public function edit($id)
     {
-        //
+        $alumni = Alumni::find($id);
+        $degreeList = [
+            'BSc Engineering' => 'BSc Engineering',
+            'MSc Engineering' => 'MSc Engineering'
+        ];
+
+        return view('admin.alumni.edit', compact('alumni', 'degreeList'));
     }
 
     /**
@@ -72,9 +106,22 @@ class AlumniController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(AlumniRequest $request, $id)
     {
-        //
+        $alumni = Alumni::find($id);
+        $alumni->update([
+            'name'         => $request->name,
+            'student_id'   => $request->student_id,
+            'degree'       => $request->degree,
+            'passing_year' => $request->passing_year,
+            'email'        => $request->email,
+            'phone'        => $request->phone,
+            'website'      => $request->website,
+            'description'  => e($this->htmlEditor->parseHtml($request->description))
+        ]);
+
+        Flash::success('Alumni updated successfully');
+        return redirect("/admin/alumni/{$alumni->id}");
     }
 
     /**
@@ -85,6 +132,10 @@ class AlumniController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $alumni = Alumni::find($id);
+        $alumni->delete();
+
+        Flash::success('Alumni deleted successfully');
+        return redirect('/admin/alumni');
     }
 }

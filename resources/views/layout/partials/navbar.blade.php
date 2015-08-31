@@ -1,28 +1,27 @@
-<div class="navbar navbar-fixed-top">
-	<div class="navbar-inner">
-		<div class="container">
-			<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-				<i class="icon-reorder shaded"></i>
-			</a>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">ICT-MBSTU</a>
+        </div>
 
-		  	<a class="brand" href="{{ url('/admin') }}">
-		  		ICT MBSTU
-		  	</a>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                @if(\Auth::guest())
+                    <li><a href="{{ url('/auth/login') }}">Sign In</a></li>
+                @else
+                    <li><a href="#">Welcome, {{ \Auth::user()->name }}</a></li>
+                    <li><a href="{{ url('auth/logout') }}">Sign Out</a></li>
+                @endif
+            </ul>
+        </div><!-- /.navbar-collapse -->
 
-			<div class="nav-collapse collapse navbar-inverse-collapse">
-			
-				<ul class="nav pull-right">
-					<li class="nav-user dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							Welcome, {{ Auth::user()->name }}
-							<b class="caret"></b>
-						</a>
-						<ul class="dropdown-menu">
-							<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div><!-- /.nav-collapse -->
-		</div>
-	</div><!-- /navbar-inner -->
-</div><!-- /navbar -->
+    </div><!-- /.container-fluid -->
+</nav>

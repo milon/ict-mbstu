@@ -1,3 +1,19 @@
-.btn-padding{
-    margin-top: 5px;
+body { 
+	padding-top: 70px; 
+}
+
+#remember {
+    margin-right: 7px;
+}
+
+.sidebar .list-group-item {
+	font-weight: bold;
+}
+
+.sidebar .list-group-item a {
+	text-decoration: none;	
+}
+
+.btn-margin-left {
+	margin-left: 5px;
 }
