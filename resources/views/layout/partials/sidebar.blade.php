@@ -7,14 +7,44 @@
 	</li>
 
 	<li class="list-group-item">
+		<a href="#">
+			<i class="fa fa-graduation-cap"></i>
+			Faculty
+		</a>
+	</li>
+
+	<li class="list-group-item">
+		<a href="#">
+			<i class="fa fa-map-o"></i> 
+			Research Area
+		</a>
+	</li>
+
+	<li class="list-group-item">
+		<a href="#">
+			<i class="fa fa-institution"></i> 
+			Research Group
+		</a>
+	</li>
+
+	<li class="list-group-item">
+		<a href="#">
+			<i class="fa fa-file-text-o"></i>
+			Course
+		</a>
+	</li>
+
+	<li class="list-group-item">
 		<a href="{{ url('/admin/alumni') }}">
 			<i class="fa fa-users"></i>
 			Alumni
 		</a>
 	</li>
 
-	<li class="list-group-item">Dapibus ac facilisis in</li>
-	<li class="list-group-item">Morbi leo risus</li>
-	<li class="list-group-item">Porta ac consectetur ac</li>
-	<li class="list-group-item">Vestibulum at eros</li>
+	<li class="list-group-item">
+		<a href="#">
+			<i class="fa fa-newspaper-o"></i>
+			News
+		</a>
+	</li>
 </ul>
