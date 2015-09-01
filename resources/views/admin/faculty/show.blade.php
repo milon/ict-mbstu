@@ -30,4 +30,7 @@
 			{!! html_entity_decode($faculty->bio) !!}
 		</div>
 	</div>
+
+	@include('admin.faculty.partials._education')
+
 @endsection
