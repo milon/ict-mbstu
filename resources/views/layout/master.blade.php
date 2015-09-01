@@ -11,6 +11,7 @@
 	<title>ICT-MBSTU</title>
 
 	<link type="text/css" href="{{ url('/admin_panel/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link type="text/css" href="{{ url('/admin_panel/jasny-bootstrap/css/jasny-bootstrap.min.css') }}" rel="stylesheet">
 	<link type="text/css" href="{{ url('/admin_panel/datatables/css/dataTables.bootstrap.min.css') }}" rel="stylesheet">
 	<link type="text/css" href="{{ url('/admin_panel/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url('/admin_panel/bootstrap-summernote/summernote.css') }}">
@@ -30,6 +31,7 @@
 
 	<script src="{{ url('/admin_panel/scripts/jquery-2.1.4.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/bootstrap/js/bootstrap.min.js') }}"></script>
+	<script src="{{ url('/admin_panel/jasny-bootstrap/js/jasny-bootstrap.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/datatables/js/jquery.dataTables.js') }}"></script>
 	<script src="{{ url('/admin_panel/datatables/js/dataTables.bootstrap.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/bootstrap-summernote/summernote.min.js') }}"></script>

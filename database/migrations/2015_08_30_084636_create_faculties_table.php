@@ -20,6 +20,7 @@ class CreateFacultiesTable extends Migration
             $table->string('phone');
             $table->string('website');
             $table->text('address');
+            $table->text('bio');
             $table->timestamps();
         });
     }

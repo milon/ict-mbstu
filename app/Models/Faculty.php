@@ -38,4 +38,12 @@ class Faculty extends Model
     	return $this->hasOne(ResearchGroup::class, 'co_ordinator');
     }
 
+    public function getAvatarAttribute()
+    {
+        if(file_exists(public_path("uploads/faculty/faculty_{$this->id}.jpg"))){
+            return url("uploads/faculty/faculty_{$this->id}.jpg");
+        }
+        return url("images/faculty_default.jpg");
+    }
+
 }

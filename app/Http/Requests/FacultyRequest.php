@@ -30,6 +30,7 @@ class FacultyRequest extends Request
             'website'     => '',
             'designation' => 'required',
             'address'     => '',
+            'avatar'      => 'image',
             'bio'         => ''
         ];
     }
