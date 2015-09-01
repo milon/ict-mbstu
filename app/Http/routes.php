@@ -31,5 +31,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::resource('research_area', 'Admin\ResearchAreaController', ['except' => 'show']);
     Route::resource('course', 'Admin\CourseController');
     Route::resource('faculty', 'Admin\FacultyController');
+    Route::resource('research_group', 'Admin\ResearchGroupController');
 
 });

@@ -24,7 +24,7 @@
 <div class="form-group{{ $errors->has('degree') ? ' has-error' : '' }}">
     {!! Form::label('degree', 'Degree', ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-8">
-        {!! Form::select('degree', $degreeList, null, ['class' => 'form-control']) !!}
+        {!! Form::select('degree', $degreeList, null, ['class' => 'form-control select2']) !!}
         <span class="help-block text-danger">
             {{ $errors -> first('degree') }}
         </span>

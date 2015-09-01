@@ -16,6 +16,8 @@
 	<link type="text/css" href="{{ url('/admin_panel/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="{{ url('/admin_panel/bootstrap-summernote/summernote.css') }}">
 	<link rel="stylesheet" href="{{ url('/admin_panel/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}">
+	<link rel="stylesheet" href="{{ url('/admin_panel/select2/select2.css') }}">
+	<link rel="stylesheet" href="{{ url('/admin_panel/select2/select2-bootstrap.css') }}">
     
     <link rel="stylesheet" href="{{ url('/admin_panel/css/style.css') }}">
 </head>
@@ -33,6 +35,7 @@
 	<script src="{{ url('/admin_panel/bootstrap/js/bootstrap.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/jasny-bootstrap/js/jasny-bootstrap.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/datatables/js/jquery.dataTables.js') }}"></script>
+	<script src="{{ url('/admin_panel/select2/select2.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/datatables/js/dataTables.bootstrap.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/bootstrap-summernote/summernote.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>

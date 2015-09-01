@@ -20,4 +20,7 @@
         format: 'yyyy-mm-dd'
     });
 
+    //select2
+    $('.select2').select2();
+
 })();

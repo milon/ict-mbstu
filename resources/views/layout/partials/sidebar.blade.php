@@ -21,7 +21,7 @@
 	</li>
 
 	<li class="list-group-item">
-		<a href="#">
+		<a href="{{ url('/admin/research_group') }}">
 			<i class="fa fa-institution"></i> 
 			Research Group
 		</a>

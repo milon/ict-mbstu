@@ -28,7 +28,7 @@ class FacultyController extends Controller
     public function index()
     {
         $facultyList = Faculty::all();
-
+        
         return view('admin.faculty.list', compact('facultyList'));
     }
 

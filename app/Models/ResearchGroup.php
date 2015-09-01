@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Faculty;
 
 class ResearchGroup extends Model
 {
@@ -10,12 +11,12 @@ class ResearchGroup extends Model
 
     protected $fillable = [
     	'name',
-    	'co_ordiantor',
+    	'co_ordinator',
     	'description'
     ];
 
     public function coOrdinator()
     {
-    	return $this->belongsTo(Faculty::class, 'co_ordiantor');
+    	return $this->belongsTo(Faculty::class, 'co_ordinator');
     }
 }
