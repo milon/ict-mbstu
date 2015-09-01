@@ -11,4 +11,9 @@ class ResearchArea extends Model
     protected $fillable = [
     	'name'
     ];
+
+    public function publication()
+    {
+        return $this->belongsToMany(Publication::class)->withTimestamps();
+    }
 }

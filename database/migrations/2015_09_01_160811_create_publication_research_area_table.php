@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateConferencePublicationsTable extends Migration
+class CreatePublicationResearchAreaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,10 @@ class CreateConferencePublicationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('conference_publications', function (Blueprint $table) {
+        Schema::create('publication_research_area', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('faculty_id');
-            $table->string('name');
-            $table->text('description');
-            $table->string('link');
-            $table->string('year', 10);
+            $table->unsignedInteger('publication_id');
+            $table->unsignedInteger('research_area_id');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateConferencePublicationsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('conference_publications');
+        Schema::drop('publication_research_area');
     }
 }
