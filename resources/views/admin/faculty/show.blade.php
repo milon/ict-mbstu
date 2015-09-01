@@ -38,4 +38,6 @@
 
 	@include('admin.faculty.partials._education')
 
+    @include('admin.faculty.partials._publication')
+
 @endsection

@@ -33,6 +33,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::resource('research_group', 'Admin\ResearchGroupController');
 
     Route::resource('faculty', 'Admin\FacultyController');
-    Route::resource('faculty.education', 'Admin\EducationController');
+    Route::resource('faculty.education', 'Admin\EducationController', ['except' => 'index']);
+    Route::resource('faculty.publication', 'Admin\PublicationController', ['except' => 'index']);
 
 });

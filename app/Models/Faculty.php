@@ -18,19 +18,14 @@ class Faculty extends Model
     	'bio'
     ];
 
-    public function conference()
-    {
-    	return $this->hasMany(ConferencePublication::class, 'faculty_id');
-    }
-
-    public function journal()
-    {
-    	return $this->hasMany(JournalPublication::class, 'faculty_id');	
-    }
-
     public function education()
     {
     	return $this->hasMany(Education::class, 'faculty_id');
+    }
+
+    public function publication()
+    {
+        return $this->hasMany(Publication::class, 'faculty_id');
     }
 
     public function researchGroup()

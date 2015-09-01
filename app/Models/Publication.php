@@ -24,6 +24,6 @@ class Publication extends Model
 
     public function researchArea()
     {
-        return $this->belongsToMany(ResearchArea::class);
+        return $this->belongsToMany(ResearchArea::class)->withTimestamps();
     }
 }

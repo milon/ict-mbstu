@@ -24,11 +24,12 @@ class PublicationRequest extends Request
     public function rules()
     {
         return [
-            'name'        => 'required',
-            'description' => 'required',
-            'link'        => '',
-            'year'        => 'required',
-            'type'        => 'required|in:journal,conference'
+            'name'             => 'required',
+            'description'      => 'required',
+            'link'             => '',
+            'year'             => 'required',
+            'type'             => 'required|in:journal,conference',
+            'research_area_id' => 'required'
         ];
     }
 }

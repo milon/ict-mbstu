@@ -20,16 +20,6 @@ class EducationController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
-     *
-     * @return Response
-     */
-    public function index()
-    {
-        
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return Response
