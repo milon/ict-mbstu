@@ -13,7 +13,7 @@ class EducationRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class EducationRequest extends Request
     public function rules()
     {
         return [
-            //
+            'name_of_degree' => 'required',
+            'institute'      => 'required',
+            'year'           => 'required',
+            'remarks'        => ''
         ];
     }
 }

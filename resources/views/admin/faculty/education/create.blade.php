@@ -4,8 +4,15 @@
 	<h1>Create New Education</h1>
 	<hr>
 
-	{!! Form::open(['url' => "admin/faculty/$facultyId/education/create", 'files' => true, 'class' => 'form-horizontal']) !!}
-		
+	{!! Form::open(['url' => "admin/faculty/$facultyId/education", 'class' => 'form-horizontal']) !!}
+
+        <div class="form-group">
+            {!! Form::label('', 'Faculty Name', ['class' => 'col-sm-3 control-label']) !!}
+            <div class="col-sm-8">
+                <label class="control-label">{{ $facultyName }}</label>
+            </div>
+        </div>
+
 		@include('admin.faculty.education._form')
 
 		<div class="form-group">

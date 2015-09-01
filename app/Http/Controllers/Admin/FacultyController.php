@@ -77,7 +77,7 @@ class FacultyController extends Controller
      */
     public function show($id)
     {
-        $faculty = Faculty::find($id);
+        $faculty = Faculty::with('education')->find($id);
 
         return view('admin.faculty.show', compact('faculty'));
     }
@@ -133,11 +133,13 @@ class FacultyController extends Controller
     public function destroy($id)
     {
         $faculty = Faculty::find($id);
-        //$faculty->delete();
-        
+
         if(file_exists(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"))){
             @unlink(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"));
         }
+
+        $faculty->education()->delete();
+        $faculty->delete();
         
         Flash::success('Faculty deleted successfully.');
         return redirect('/admin/faculty');

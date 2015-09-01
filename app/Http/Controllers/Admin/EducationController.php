@@ -2,13 +2,23 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\HtmlEditor\HtmlEditor;
+use App\Models\Education;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
+use App\Models\Faculty;
+use App\Http\Requests\EducationRequest;
 use App\Http\Controllers\Controller;
+use Laracasts\Flash\Flash;
 
 class EducationController extends Controller
 {
+    protected $htmlEditor;
+
+    public function __construct(HtmlEditor $htmlEditor)
+    {
+        $this->htmlEditor = $htmlEditor;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +36,9 @@ class EducationController extends Controller
      */
     public function create($facultyId)
     {
-        return view('admin.faculty.education.create', compact('facultyId'));
+        $facultyName = Faculty::find($facultyId)->name;
+
+        return view('admin.faculty.education.create', compact('facultyId', 'facultyName'));
     }
 
     /**
@@ -35,9 +47,19 @@ class EducationController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store($facultyId, EducationRequest $request)
     {
-        //
+        $faculty = Faculty::find($facultyId);
+        $education = new Education([
+            'name_of_degree' => $request->name_of_degree,
+            'institute'      => $request->institute,
+            'year'           => $request->year,
+            'remarks'        => e($this->htmlEditor->parseHtml($request->remarks))
+        ]);
+        $faculty->education()->save($education);
+
+        Flash::success('Faculty education added successfully');
+        return redirect("/admin/faculty/$facultyId");
     }
 
     /**
@@ -46,9 +68,11 @@ class EducationController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($facultyId, $id)
     {
-        //
+        $education = Education::with('faculty')->find($id);
+
+        return view('admin.faculty.education.show', compact('education'));
     }
 
     /**
@@ -57,9 +81,12 @@ class EducationController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($facultyId, $id)
     {
-        //
+        $education = Education::with('faculty')->find($id);
+        $facultyName = $education->faculty->name;
+
+        return view('admin.faculty.education.edit', compact('education', 'facultyName', 'facultyId'));
     }
 
     /**
@@ -69,9 +96,18 @@ class EducationController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update($facultyId, EducationRequest $request, $id)
     {
-        //
+        $education = Education::find($id);
+        $education->update([
+            'name_of_degree' => $request->name_of_degree,
+            'institute'      => $request->institute,
+            'year'           => $request->year,
+            'remarks'        => e($this->htmlEditor->parseHtml($request->remarks))
+        ]);
+
+        Flash::success('Faculty education updated successfully');
+        return redirect("/admin/faculty/$facultyId");
     }
 
     /**
@@ -80,8 +116,12 @@ class EducationController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($facultyId, $id)
     {
-        //
+        $education = Education::find($id);
+        $education->delete();
+
+        Flash::success('Faculty education deleted successfully');
+        return redirect("/admin/faculty/$facultyId");
     }
 }

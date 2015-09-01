@@ -1,6 +1,9 @@
 @extends('layout.admin')
 
 @section('body')
+
+    @include('layout.partials.modal')
+
 	<h1>
 		Faculty Detail
 		<div class="pull-right">
@@ -9,6 +12,8 @@
 		</div>
 	</h1>
 	<hr>
+
+    @include('flash::message')
 
 	<div class="row">
 		<div class="col-sm-3">
