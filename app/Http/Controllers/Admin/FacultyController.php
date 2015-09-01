@@ -135,8 +135,8 @@ class FacultyController extends Controller
         $faculty = Faculty::find($id);
         //$faculty->delete();
         
-        if(file_exists(public_path("uploads/faculty/faculty_$id.jpg"))){
-            @unlink(public_path("uploads/faculty/faculty_$id.jpg"));
+        if(file_exists(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"))){
+            @unlink(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"));
         }
         
         Flash::success('Faculty deleted successfully.');
