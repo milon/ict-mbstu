@@ -6,7 +6,7 @@
 
 	<div class="row">
 
-		<div class="col-sm-4">
+		<div class="col-sm-3">
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<h3 class="panel-title text-center">Faculty</h3>
@@ -17,7 +17,7 @@
 			</div>
 		</div>
 
-		<div class="col-sm-4">
+		<div class="col-sm-3">
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<h3 class="panel-title text-center">Research Group</h3>
@@ -28,7 +28,18 @@
 			</div>
 		</div>
 
-		<div class="col-sm-4">
+		<div class="col-sm-3">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h3 class="panel-title text-center">Research Area</h3>
+				</div>
+				<div class="panel-body text-center">
+					<h1>{{ $researchArea }}</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-3">
 			<div class="panel panel-info">
 				<div class="panel-heading">
 					<h3 class="panel-title text-center">News</h3>
