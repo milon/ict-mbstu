@@ -68,7 +68,7 @@
 <div class="form-group{{ $errors->has('leave') ? ' has-error' : '' }}">
     {!! Form::label('leave', 'Education Leave', ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-8">
-        <input type="checkbox" name="education_leave" class="switch" data-handle-width="45" data-on-text="Yes" data-off-text="No" {{ ($faculty->education_leave)?'checked':'' }}>
+        <input type="checkbox" name="education_leave" class="switch" data-handle-width="45" data-on-text="Yes" data-off-text="No" {{ (isset($faculty) && $faculty->education_leave)?'checked':'' }}>
         <span class="help-block text-danger">
             {{ $errors->first('leave') }}
         </span>
