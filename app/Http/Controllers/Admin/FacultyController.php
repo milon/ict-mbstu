@@ -138,7 +138,16 @@ class FacultyController extends Controller
             @unlink(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"));
         }
 
+        //delete education
         $faculty->education()->delete();
+
+        //delete publication
+        foreach($faculty->publication as $publication){
+            $publication->researchArea()->sync([]);
+        }
+        $faculty->publication()->delete();
+
+        //delete faculty
         $faculty->delete();
         
         Flash::success('Faculty deleted successfully.');

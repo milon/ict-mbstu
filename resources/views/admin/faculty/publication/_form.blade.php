@@ -47,7 +47,7 @@
 <div class="form-group{{ $errors->has('research_area_id') ? ' has-error' : '' }}">
     {!! Form::label('research_area_id', 'Research Area', ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-8">
-        {!! Form::select('research_area_id[]', $researchAreaList, null, ['multiple', 'class' => 'form-control select2']) !!}
+        {!! Form::select('research_area_id[]', $researchAreaList, isset($publication)?$publication->researchArea->pluck('id')->all():null, ['multiple', 'class' => 'form-control select2']) !!}
         <span class="help-block text-danger">
             {{ $errors->first('research_area_id') }}
         </span>

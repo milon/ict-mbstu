@@ -1,7 +1,7 @@
 @extends('layout.admin')
 
 @section('body')
-    <h1>Edit Faculty</h1>
+    <h1>Edit Faculty Education</h1>
     <hr>
 
     {!! Form::model($education, ['method' => 'put', 'url' => "admin/faculty/$facultyId/education/{$education->id}", 'class' => 'form-horizontal']) !!}

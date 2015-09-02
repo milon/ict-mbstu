@@ -25,7 +25,7 @@
                 @foreach($faculty->publication as $publication)
                     <tr>
                         <td>{{ $publication->name }}</td>
-                        <td>{{ $publication->type }}</td>
+                        <td>{{ ucfirst($publication->type) }}</td>
                         <td>{{ $publication->year }}</td>
                         <td>
                             <a href="{{ url("/admin/faculty/{$faculty->id}/publication/{$publication->id}") }}" class="btn btn-xs btn-success"><i class="fa fa-eye"></i></a>

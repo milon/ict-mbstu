@@ -74,9 +74,11 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function show($id)
+    public function show($facultyId, $id)
     {
-        //
+        $publication = Publication::with(['faculty', 'researchArea'])->find($id);
+
+        return view('admin.faculty.publication.show', compact('publication'));
     }
 
     /**
@@ -85,9 +87,25 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function edit($id)
+    public function edit($facultyId, $id)
     {
-        //
+        $publication = Publication::with(['faculty', 'researchArea'])->find($id);
+        $facultyName      = Faculty::find($facultyId)->name;
+        $researchAreaList = ResearchArea::lists('name', 'id')->all();
+        $typeList         = [
+            'journal'    => 'Journal',
+            'conference' => 'Conference'
+        ];
+
+        return view('admin.faculty.publication.edit',
+            compact(
+                'facultyId',
+                'facultyName',
+                'researchAreaList',
+                'typeList',
+                'publication'
+            )
+        );
     }
 
     /**
@@ -97,9 +115,21 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update($facultyId, PublicationRequest $request, $id)
     {
-        //
+        $publication = Publication::find($id);
+        $publication->update([
+            'name'        => $request->name,
+            'link'        => $request->link,
+            'year'        => $request->year,
+            'type'        => $request->type,
+            'description' => e($this->htmlEditor->parseHtml($request->description))
+        ]);
+
+        $publication->researchArea()->sync($request->research_area_id);
+
+        Flash::success('Publication updated successfully');
+        return redirect("/admin/faculty/$facultyId");
     }
 
     /**
@@ -108,8 +138,13 @@ class PublicationController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy($id)
+    public function destroy($facultyId, $id)
     {
-        //
+        $publication = Publication::find($id);
+        $publication->researchArea()->sync([]);
+        $publication->delete();
+
+        Flash::success('Publication created successfully');
+        return redirect("/admin/faculty/$facultyId");
     }
 }
