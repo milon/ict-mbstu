@@ -51,13 +51,14 @@ class FacultyController extends Controller
     public function store(FacultyRequest $request)
     {
         $faculty = Faculty::create([
-            'name'        => $request->name,
-            'designation' => $request->designation,
-            'email'       => $request->email,
-            'phone'       => $request->phone,
-            'website'     => $request->website,
-            'address'     => $request->address,
-            'bio'         => e($this->htmlEditor->parseHtml($request->bio))
+            'name'            => $request->name,
+            'designation'     => $request->designation,
+            'email'           => $request->email,
+            'phone'           => $request->phone,
+            'website'         => $request->website,
+            'address'         => $request->address,
+            'education_leave' => $request->has('education_leave')?1:0,
+            'bio'             => e($this->htmlEditor->parseHtml($request->bio))
         ]);
 
         //Profile Picture
@@ -106,13 +107,14 @@ class FacultyController extends Controller
     {
         $faculty = Faculty::find($id);
         $faculty->update([
-            'name'        => $request->name,
-            'designation' => $request->designation,
-            'email'       => $request->email,
-            'phone'       => $request->phone,
-            'website'     => $request->website,
-            'address'     => $request->address,
-            'bio'         => e($this->htmlEditor->parseHtml($request->bio))
+            'name'            => $request->name,
+            'designation'     => $request->designation,
+            'email'           => $request->email,
+            'phone'           => $request->phone,
+            'website'         => $request->website,
+            'address'         => $request->address,
+            'education_leave' => $request->has('education_leave')?1:0,
+            'bio'             => e($this->htmlEditor->parseHtml($request->bio))
         ]);
 
         //Profile Picture

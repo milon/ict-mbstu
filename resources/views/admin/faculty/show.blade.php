@@ -27,6 +27,7 @@
 			<p><i class="fa fa-phone"></i> Phone: {{ $faculty->phone }}</p>
 			<p><i class="fa fa-globe"></i> Website: {{ $faculty->website }}</p>
 			<p><i class="fa fa-map-marker"></i> Address: {{ $faculty->address }}</p>
+			<p><i class="fa fa-plane"></i> Education Leave: {{ ($faculty->education_leave)?'Yes':'No' }}</p>
 		</div>
 	</div>
 

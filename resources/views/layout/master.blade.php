@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="{{ url('/admin_panel/bootstrap-datepicker/css/bootstrap-datepicker.min.css') }}">
 	<link rel="stylesheet" href="{{ url('/admin_panel/select2/select2.css') }}">
 	<link rel="stylesheet" href="{{ url('/admin_panel/select2/select2-bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ url('/admin_panel/bootstrap-switch/css/bootstrap3/bootstrap-switch.min.css') }}">
     
     <link rel="stylesheet" href="{{ url('/admin_panel/css/style.css') }}">
 </head>
@@ -39,6 +40,7 @@
 	<script src="{{ url('/admin_panel/datatables/js/dataTables.bootstrap.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/bootstrap-summernote/summernote.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
+	<script src="{{ url('/admin_panel/bootstrap-switch/js/bootstrap-switch.min.js') }}"></script>
 	<script src="{{ url('/admin_panel/scripts/html-editor.js') }}"></script>
 	<script src="{{ url('/admin_panel/scripts/delete-form.js') }}"></script>
 	<script src="{{ url('/admin_panel/scripts/script.js') }}"></script>

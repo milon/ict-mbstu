@@ -24,7 +24,7 @@ Route::post('password/reset', 'Auth\PasswordController@postReset');
 // Admin
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
-    Route::get('/', 'DashboardController@index');
+    Route::get('/', 'Admin\DashboardController@index');
 
     Route::resource('alumni', 'Admin\AlumniController');
     Route::resource('news', 'Admin\NewsController');

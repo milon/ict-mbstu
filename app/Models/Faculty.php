@@ -15,7 +15,8 @@ class Faculty extends Model
     	'website',
     	'designation',
     	'address',
-    	'bio'
+    	'bio',
+        'education_leave'
     ];
 
     public function education()
