@@ -19,6 +19,6 @@ class DashboardController extends Controller
 		$researchArea  = ResearchArea::count();
 		$news          = News::count();
     	
-    	return view('pages.dashboard', compact('faculty', 'researchGroup', 'researchArea', 'news'));
+    	return view('admin.pages.dashboard', compact('faculty', 'researchGroup', 'researchArea', 'news'));
     }
 }
