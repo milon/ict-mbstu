@@ -22,6 +22,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
 
     Route::get('/', 'Admin\DashboardController@index');
 
+    Route::get('/profile', 'Auth\ProfileController@edit');
+    Route::post('/profile', 'Auth\ProfileController@update');
+
     Route::resource('alumni', 'Admin\AlumniController');
     Route::resource('news', 'Admin\NewsController');
     Route::resource('research_area', 'Admin\ResearchAreaController', ['except' => 'show']);

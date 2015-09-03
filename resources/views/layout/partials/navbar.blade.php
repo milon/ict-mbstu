@@ -15,10 +15,28 @@
         <div class="collapse navbar-collapse" id="navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 @if(\Auth::guest())
-                    <li><a href="{{ url('/auth/login') }}">Sign In</a></li>
+                    <li>
+                        <a href="{{ url('/auth/login') }}">
+                            <i class="fa fa-sign-in"></i>
+                            Sign In
+                        </a>
+                    </li>
                 @else
-                    <li><a href="#">Welcome, {{ \Auth::user()->name }}</a></li>
-                    <li><a href="{{ url('auth/logout') }}">Sign Out</a></li>
+                    <li>
+                        <a href="#">Welcome, {{ \Auth::user()->name }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('/admin/profile') }}">
+                            <i class="fa fa-user"></i> 
+                            User Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url('auth/logout') }}">
+                            <i class="fa fa-sign-out"></i> 
+                            Sign Out
+                        </a>
+                    </li>
                 @endif
             </ul>
         </div><!-- /.navbar-collapse -->

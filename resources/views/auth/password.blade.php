@@ -1,42 +1,31 @@
-@extends('layout.login')
+@extends('layout.master')
 
 @section('content')
 	<div class="row">
-		<div class="module module-login span4 offset4">
-			{!! Form::open(['url' => '/password/email', 'class' => 'form-vertical']) !!}
+		<div class="col-sm-12">
+			<h1>Remember Password</h1>
+			<hr>
 
-				@if($errors->has())
-				    <div class="alert alert-danger alert-dismissable">
-				        <button type="button" class="close" aria-label="Close" data-dismiss="alert">
-				            <span aria-hidden="true">&times;</span>
-				        </button>
-				        <ul>
-				            @foreach($errors->all() as $error)
-				                <li> {{$error}} </li>
-				            @endforeach
-				        </ul>
+			{!! Form::open(['url' => '/password/email', 'class' => 'form-horizontal']) !!}				
+				{{-- email --}}
+				<div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+				    {!! Form::label('email', 'Email Address', ['class' => 'col-sm-3 control-label']) !!}
+				    <div class="col-sm-6">
+				        {!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'Email Address']) !!}
+				        <span class="help-block text-danger">
+				            {{ $errors->first('email') }}
+				        </span>
 				    </div>
-				@endif
+				</div>
 
-				<div class="module-head">
-					<h3>Remember Password</h3>
-				</div>
-				<div class="module-body">
-					<div class="control-group">
-						<div class="controls row-fluid">
-							<input class="span12" type="text" name="email" id="inputEmail" placeholder="Email Address">
-						</div>
-					</div>
-				</div>
-				<div class="module-foot">
-					<div class="control-group">
-						<div class="controls clearfix">
-							<a href="{{ url('/auth/login') }}" class="btn btn-inverse">Cancel</a>
-							<button type="submit" class="btn btn-primary pull-right">Remember Password</button>
-						</div>
-					</div>
-				</div>
-			</form>
+				<!-- Log In! Field -->
+		        <div class="form-group">
+		            <div class="col-sm-offset-3 col-sm-5">
+		                {!! Form::submit('Remember Password', ['class' => 'btn btn-primary']) !!}
+		            </div>
+		        </div>
+
+			{!! Form::close() !!}
 		</div>
 	</div>
 @endsection
