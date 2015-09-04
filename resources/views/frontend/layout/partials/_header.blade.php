@@ -49,7 +49,7 @@
                         </ul>
                     </li>
 
-                    <li {{ ($active == 'faculty')?'class=active':'' }}><a href="#">Faculty</a></li>
+                    <li {{ ($active == 'faculty')?'class=active':'' }}><a href="{{ url('/faculty') }}">Faculty</a></li>
 
                     <li class="dropdown {{ ($active == 'research')?'active':'' }}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <i class="fa fa-angle-down"></i></a>
