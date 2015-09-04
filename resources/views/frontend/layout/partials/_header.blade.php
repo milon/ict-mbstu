@@ -38,20 +38,20 @@
 
             <div class="collapse navbar-collapse navbar-right">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li {{ ($active == 'home')?'class=active':'' }}><a href="{{ url('/') }}">Home</a></li>
 
-                    <li class="dropdown">
+                    <li class="dropdown {{ ($active == 'about_us')?'active':'' }}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">General Information</a></li>
                             <li><a href="#">Message of Head</a></li>
-                            <li><a href="#">Contact Info</a></li>
+                            <li><a href="{{ url('/contact') }}">Contact Info</a></li>
                         </ul>
                     </li>
 
-                    <li><a href="#">Faculty</a></li>
+                    <li {{ ($active == 'faculty')?'class=active':'' }}><a href="#">Faculty</a></li>
 
-                    <li class="dropdown">
+                    <li class="dropdown {{ ($active == 'research')?'active':'' }}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Research Area</a></li>
@@ -61,11 +61,11 @@
                         </ul>
                     </li>
 
-                    <li><a href="#">Courses</a></li>
+                    <li {{ ($active == 'course')?'class=active':'' }}><a href="#">Courses</a></li>
 
-                    <li><a href="#">Alumni</a></li>
+                    <li {{ ($active == 'alumni')?'class=active':'' }}><a href="#">Alumni</a></li>
 
-                    <li><a href="#">News</a></li>
+                    <li {{ ($active == 'news')?'class=active':'' }}><a href="#">News</a></li>
 
                 </ul>
             </div>

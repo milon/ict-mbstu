@@ -2,6 +2,7 @@
 
 // Frontend Routes
 Route::get('/', 'Frontend\PagesController@home');
+Route::get('/contact', 'Frontend\PagesController@contact');
 
 
 // Authentication routes...

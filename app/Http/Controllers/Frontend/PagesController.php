@@ -9,7 +9,13 @@ use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
 {
-    public function home(){
-        return view('frontend.layout.frontend');
+    public function home()
+    {
+        return view('frontend.pages.home', ['active' => 'home']);
+    }
+
+    public function contact()
+    {
+        return view('frontend.pages.contact', ['active' => 'about_us']);
     }
 }

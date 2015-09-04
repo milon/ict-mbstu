@@ -535,7 +535,7 @@ input.search-form:hover {
 
 #feature {
   background: #f2f2f2;
-  padding-bottom: 40px;
+  padding-bottom: 0;
 }
 
 .features{
@@ -589,7 +589,7 @@ input.search-form:hover {
 }
 
 #recent-works{
-    padding-bottom: 70px;
+    padding-bottom: 0;
 }
 
 .recent-work-wrap {
