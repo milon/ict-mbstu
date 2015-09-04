@@ -13,6 +13,9 @@
     <link href="{{ asset('/front_panel/css/prettyPhoto.css') }}" rel="stylesheet">
     <link href="{{ asset('/front_panel/css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('/front_panel/css/responsive.css') }}" rel="stylesheet">
+
+    @yield('style')
+
     <link href="{{ asset('/front_panel/css/style.css') }}" rel="stylesheet">
 
     <!--[if lt IE 9]>
@@ -37,5 +40,8 @@
 <script src="{{ asset('/front_panel/js/jquery.isotope.min.js') }}"></script>
 <script src="{{ asset('/front_panel/js/main.js') }}"></script>
 <script src="{{ asset('/front_panel/js/wow.min.js') }}"></script>
+
+@yield('script')
+
 </body>
 </html>
