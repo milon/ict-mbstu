@@ -26,4 +26,15 @@ class Publication extends Model
     {
         return $this->belongsToMany(ResearchArea::class)->withTimestamps();
     }
+
+    public function scopeJournal($query)
+    {
+        return $query->where('type', 'journal');
+    }
+
+    public function scopeConference($query)
+    {
+        return $query->where('type', 'conference');
+    }
+
 }

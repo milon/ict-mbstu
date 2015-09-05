@@ -6,6 +6,8 @@ Route::get('/contact', 'Frontend\PagesController@contact');
 
 Route::resource('/alumni', 'Frontend\AlumniController', ['only' => ['index', 'show']]);
 Route::resource('/faculty', 'Frontend\FacultyController', ['only' => ['index', 'show']]);
+Route::resource('/journal', 'Frontend\JournalController', ['only' => ['index', 'show']]);
+Route::resource('/conference', 'Frontend\ConferenceController', ['only' => ['index', 'show']]);
 Route::resource('/research_group', 'Frontend\ResearchGroupController', ['only' => ['index', 'show']]);
 
 // Authentication routes...
