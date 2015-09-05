@@ -8,6 +8,7 @@ Route::resource('/alumni', 'Frontend\AlumniController', ['only' => ['index', 'sh
 Route::resource('/faculty', 'Frontend\FacultyController', ['only' => ['index', 'show']]);
 Route::resource('/journal', 'Frontend\JournalController', ['only' => ['index', 'show']]);
 Route::resource('/conference', 'Frontend\ConferenceController', ['only' => ['index', 'show']]);
+Route::resource('/research_area', 'Frontend\ResearchAreaController', ['only' => ['index', 'show']]);
 Route::resource('/research_group', 'Frontend\ResearchGroupController', ['only' => ['index', 'show']]);
 
 // Authentication routes...

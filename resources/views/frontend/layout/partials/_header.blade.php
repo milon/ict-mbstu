@@ -54,7 +54,7 @@
                     <li class="dropdown {{ ($active == 'research')?'active':'' }}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Research <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Research Area</a></li>
+                            <li><a href="{{ url('/research_area') }}">Research Area</a></li>
                             <li><a href="{{ url('/journal') }}">Journal Publication</a></li>
                             <li><a href="{{ url('/conference') }}">Conference Paper</a></li>
                             <li><a href="{{ url('/research_group') }}">Research Group</a></li>
