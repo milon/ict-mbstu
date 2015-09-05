@@ -29,6 +29,16 @@ class Faculty extends Model
         return $this->hasMany(Publication::class, 'faculty_id');
     }
 
+    public function journal()
+    {
+        return $this->hasMany(Publication::class, 'faculty_id')->where('type', 'journal');
+    }
+
+    public function conference()
+    {
+        return $this->hasMany(Publication::class, 'faculty_id')->where('type', 'conference');
+    }
+
     public function researchGroup()
     {
     	return $this->hasOne(ResearchGroup::class, 'co_ordinator');

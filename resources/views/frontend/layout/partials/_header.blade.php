@@ -31,7 +31,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="images/logo_large.png" alt="logo" id="logo">
+                    <img src="{{ asset('images/logo_large.png') }}" alt="logo" id="logo">
                     ICT, MBSTU
                 </a>
             </div>
