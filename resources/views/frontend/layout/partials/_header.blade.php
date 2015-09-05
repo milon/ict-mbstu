@@ -57,7 +57,7 @@
                             <li><a href="#">Research Area</a></li>
                             <li><a href="#">Journal Publication</a></li>
                             <li><a href="#">Conference Paper</a></li>
-                            <li><a href="#">Research Group</a></li>
+                            <li><a href="{{ url('/research_group') }}">Research Group</a></li>
                         </ul>
                     </li>
 
