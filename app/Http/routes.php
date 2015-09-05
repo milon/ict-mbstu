@@ -9,6 +9,7 @@ Route::resource('/faculty', 'Frontend\FacultyController', ['only' => ['index', '
 Route::resource('/journal', 'Frontend\JournalController', ['only' => ['index', 'show']]);
 Route::resource('/conference', 'Frontend\ConferenceController', ['only' => ['index', 'show']]);
 Route::resource('/news', 'Frontend\NewsController', ['only' => ['index', 'show']]);
+Route::resource('/course', 'Frontend\CourseController', ['only' => ['index', 'show']]);
 Route::resource('/research_area', 'Frontend\ResearchAreaController', ['only' => ['index', 'show']]);
 Route::resource('/research_group', 'Frontend\ResearchGroupController', ['only' => ['index', 'show']]);
 
