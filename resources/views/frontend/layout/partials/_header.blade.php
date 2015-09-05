@@ -2,7 +2,7 @@
     <div class="top-bar">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-xs-4">
+                <div class="col-sm-8 col-xs-10">
                     <div class="top-number">
                         <p>
                             <i class="fa fa-phone-square"></i> +88 0921 51899 |
@@ -10,7 +10,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="col-sm-6 col-xs-8">
+                <div class="col-sm-4 col-xs-2">
                     <div class="social">
                         <ul class="social-share">
                             <li><a target="_blank" href="https://www.facebook.com/InformationCommunicationTechnologymbstu"><i class="fa fa-facebook"></i></a></li>
