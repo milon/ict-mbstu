@@ -2155,10 +2155,9 @@ ul.faq li > div h3 {
   background: #f5f5f5;
   border-top: 1px solid #fff;
   display: block;
-  font-size: 12px;
   overflow: hidden;
   padding: 5px;
-  text-align: left;
+  text-align: center;
 }
 
 #publish_date {

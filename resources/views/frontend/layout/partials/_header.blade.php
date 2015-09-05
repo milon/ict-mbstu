@@ -65,7 +65,7 @@
 
                     <li {{ ($active == 'alumni')?'class=active':'' }}><a href="{{ url('/alumni') }}">Alumni</a></li>
 
-                    <li {{ ($active == 'news')?'class=active':'' }}><a href="#">News</a></li>
+                    <li {{ ($active == 'news')?'class=active':'' }}><a href="{{ url('/news') }}">News</a></li>
 
                 </ul>
             </div>

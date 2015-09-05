@@ -25,12 +25,20 @@
                     </thead>
 
                     <tbody>
-                    @foreach($researchGroupList as $group)
+                    @if(count($researchGroupList))
+                        @foreach($researchGroupList as $group)
+                            <tr>
+                                <td><a href="{{ url("/research_group/$group->id") }}">{{ $group->name }}</a></td>
+                                <td><a href="{{ url("/faculty/{$group->coOrdinator->id}") }}">{{ $group->coOrdinator->name }}</a></td>
+                            </tr>
+                        @endforeach
+                    @else
                         <tr>
-                            <td><a href="{{ url("/research_group/$group->id") }}">{{ $group->name }}</a></td>
-                            <td><a href="{{ url("/faculty/{$group->coOrdinator->id}") }}">{{ $group->coOrdinator->name }}</a></td>
+                            <td colspan="2">
+                                No Research Group Found
+                            </td>
                         </tr>
-                    @endforeach
+                    @endif
                     </tbody>
                 </table>
 
