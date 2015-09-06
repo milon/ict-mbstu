@@ -32,7 +32,7 @@ class ConferenceController extends Controller
     public function show($id)
     {
         $active = 'research';
-        $conference = Publication::with(['researchArea', 'faculty'])->find($id);
+        $conference = Publication::with(['researchArea', 'faculty'])->where('type', 'conference')->findOrFail($id);
 
         return view('frontend.conference.show', compact('active', 'conference'));
     }

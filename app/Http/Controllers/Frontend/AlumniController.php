@@ -21,7 +21,7 @@ class AlumniController extends Controller
 
     public function show($id)
     {
-        $alumni = Alumni::find($id);
+        $alumni = Alumni::findOrFail($id);
         $active = 'alumni';
 
         return view('frontend.alumni.show', compact('alumni', 'active'));

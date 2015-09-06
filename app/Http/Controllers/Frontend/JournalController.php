@@ -32,7 +32,7 @@ class JournalController extends Controller
     public function show($id)
     {
         $active = 'research';
-        $journal = Publication::with(['researchArea', 'faculty'])->find($id);
+        $journal = Publication::with(['researchArea', 'faculty'])->where('type', 'journal')->findOrFail($id);
 
         return view('frontend.journal.show', compact('active', 'journal'));
     }

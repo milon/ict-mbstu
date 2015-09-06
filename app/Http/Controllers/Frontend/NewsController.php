@@ -32,7 +32,7 @@ class NewsController extends Controller
     public function show($id)
     {
         $active = 'news';
-        $news = News::find($id);
+        $news = News::findOrFail($id);
 
         return view('frontend.news.show', compact('active', 'news'));
     }

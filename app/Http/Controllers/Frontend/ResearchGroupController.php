@@ -32,7 +32,7 @@ class ResearchGroupController extends Controller
     public function show($id)
     {
         $active = 'research';
-        $researchGroup = ResearchGroup::with('coOrdinator')->find($id);
+        $researchGroup = ResearchGroup::with('coOrdinator')->findOrFail($id);
 
         return view('frontend.research_group.show', compact('active', 'researchGroup'));
     }

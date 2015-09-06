@@ -32,7 +32,7 @@ class FacultyController extends Controller
     public function show($id)
     {
         $active = 'faculty';
-        $faculty = Faculty::with(['journal', 'conference', 'education'])->find($id);
+        $faculty = Faculty::with(['journal', 'conference', 'education'])->findOrFail($id);
 
         return view('frontend.faculty.show', compact('active', 'faculty'));
     }

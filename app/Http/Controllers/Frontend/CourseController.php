@@ -31,7 +31,7 @@ class CourseController extends Controller
      */
     public function show($id)
     {
-        $course = Course::find($id);
+        $course = Course::findOrFail($id);
         $active = 'course';
 
         return view('frontend.course.show', compact('active', 'course'));

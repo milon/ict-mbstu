@@ -33,7 +33,7 @@ class ResearchAreaController extends Controller
     public function show($id)
     {
         $active = 'research';
-        $researchArea = ResearchArea::with('publication')->find($id);
+        $researchArea = ResearchArea::with('publication')->findOrFail($id);
 
         return view('frontend.research_area.show', compact('active', 'researchArea'));
     }
