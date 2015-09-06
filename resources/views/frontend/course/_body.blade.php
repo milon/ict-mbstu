@@ -12,6 +12,6 @@
     @endforeach
 @else
     <tr>
-        <td colspan="3" class="text-center">No Course Available Yet</td>
+        <td colspan="3">No Course Available Yet</td>
     </tr>
 @endif
