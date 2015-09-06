@@ -34,6 +34,8 @@
                         <div class="text-center">
                             {!! $facultyList->render() !!}
                         </div>
+                    @else
+                        <h1>No Faculty Listed Yet.</h1>
                     @endif
                 </div>
 

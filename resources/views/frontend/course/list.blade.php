@@ -27,18 +27,7 @@
                     </thead>
 
                     <tbody>
-                        @foreach($courseList->where('semester', '1') as $course)
-                            <tr>
-                                <td>
-                                    <a href="{{ url("/course/{$course->id}") }}">
-                                        {{ $course->code }}
-                                    </a>
-                                </td>
-                                <td>{{ $course->name }}</td>
-                                <td>{{ $course->credit }}</td>
-                            </tr>
-
-                        @endforeach
+                        @include('frontend.course._body', ['semester' => '1'])
                     </tbody>
                 </table>
             </div>
@@ -60,18 +49,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '2') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '2'])
                     </tbody>
                 </table>
             </div>
@@ -93,18 +71,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '3') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '3'])
                     </tbody>
                 </table>
             </div>
@@ -126,18 +93,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '4') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '4'])
                     </tbody>
                 </table>
             </div>
@@ -159,18 +115,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '5') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '5'])
                     </tbody>
                 </table>
             </div>
@@ -192,18 +137,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '6') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '6'])
                     </tbody>
                 </table>
             </div>
@@ -225,18 +159,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '7') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '7'])
                     </tbody>
                 </table>
             </div>
@@ -258,18 +181,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '8') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '8'])
                     </tbody>
                 </table>
             </div>
@@ -291,18 +203,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '9') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '9'])
                     </tbody>
                 </table>
             </div>
@@ -324,18 +225,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '10') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '10'])
                     </tbody>
                 </table>
             </div>
@@ -357,18 +247,7 @@
                     </thead>
 
                     <tbody>
-                    @foreach($courseList->where('semester', '11') as $course)
-                        <tr>
-                            <td>
-                                <a href="{{ url("/course/{$course->id}") }}">
-                                    {{ $course->code }}
-                                </a>
-                            </td>
-                            <td>{{ $course->name }}</td>
-                            <td>{{ $course->credit }}</td>
-                        </tr>
-
-                    @endforeach
+                        @include('frontend.course._body', ['semester' => '11'])
                     </tbody>
                 </table>
             </div>
