@@ -15,8 +15,13 @@ class ResearchGroup extends Model
     	'description'
     ];
 
+    /**
+     * Relationship with Co-Ordinator
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function coOrdinator()
     {
     	return $this->belongsTo(Faculty::class, 'co_ordinator');
     }
+    
 }

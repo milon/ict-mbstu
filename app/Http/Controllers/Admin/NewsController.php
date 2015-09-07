@@ -13,13 +13,18 @@ class NewsController extends Controller
 {
     protected $htmlEditor;
 
+    /**
+     * constructor method
+     * 
+     * @param HtmlEditor $htmlEditor
+     */
     public function __construct(HtmlEditor $htmlEditor)
     {
         $this->htmlEditor = $htmlEditor;
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the News.
      *
      * @return Response
      */
@@ -31,7 +36,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new News.
      *
      * @return Response
      */
@@ -41,9 +46,9 @@ class NewsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created News in storage.
      *
-     * @param  Request  $request
+     * @param  NewsRequest  $request
      * @return Response
      */
     public function store(NewsRequest $request)
@@ -59,7 +64,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified News.
      *
      * @param  int  $id
      * @return Response
@@ -72,7 +77,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified News.
      *
      * @param  int  $id
      * @return Response
@@ -85,9 +90,9 @@ class NewsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified News in storage.
      *
-     * @param  Request  $request
+     * @param  NewsRequest  $request
      * @param  int  $id
      * @return Response
      */
@@ -105,7 +110,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified News from storage.
      *
      * @param  int  $id
      * @return Response

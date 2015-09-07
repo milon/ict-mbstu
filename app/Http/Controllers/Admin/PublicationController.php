@@ -15,14 +15,20 @@ class PublicationController extends Controller
 {
     protected $htmlEditor;
 
+    /**
+     * constructor method
+     * 
+     * @param HtmlEditor $htmlEditor
+     */
     public function __construct(HtmlEditor $htmlEditor)
     {
         $this->htmlEditor = $htmlEditor;
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Publication.
      *
+     * @param int $facultyId
      * @return Response
      */
     public function create($facultyId)
@@ -45,9 +51,10 @@ class PublicationController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Publication in storage.
      *
-     * @param  Request  $request
+     * @param  int $facultyId
+     * @param  PublicationRequest  $request
      * @return Response
      */
     public function store($facultyId, PublicationRequest $request)
@@ -69,8 +76,9 @@ class PublicationController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Publication.
      *
+     * @param  int $facultyId 
      * @param  int  $id
      * @return Response
      */
@@ -82,8 +90,9 @@ class PublicationController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Publication.
      *
+     * @param  int $facultyId
      * @param  int  $id
      * @return Response
      */
@@ -109,9 +118,10 @@ class PublicationController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Publication in storage.
      *
-     * @param  Request  $request
+     * @param  int $facultyId 
+     * @param  PublicationRequest  $request
      * @param  int  $id
      * @return Response
      */
@@ -135,6 +145,7 @@ class PublicationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param  int $facultyId 
      * @param  int  $id
      * @return Response
      */

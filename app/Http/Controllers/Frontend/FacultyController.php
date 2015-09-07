@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class FacultyController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Faculty.
      *
      * @return Response
      */
@@ -24,7 +24,7 @@ class FacultyController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Faculty.
      *
      * @param  int  $id
      * @return Response

@@ -11,7 +11,7 @@ use Laracasts\Flash\Flash;
 class ResearchAreaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the ResearchArea.
      *
      * @return Response
      */
@@ -23,7 +23,7 @@ class ResearchAreaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new ResearchArea.
      *
      * @return Response
      */
@@ -33,9 +33,9 @@ class ResearchAreaController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created ResearchArea in storage.
      *
-     * @param  Request  $request
+     * @param  ResearchAreaRequest  $request
      * @return Response
      */
     public function store(ResearchAreaRequest $request)
@@ -49,7 +49,7 @@ class ResearchAreaController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified ResearchArea.
      *
      * @param  int  $id
      * @return Response
@@ -62,9 +62,9 @@ class ResearchAreaController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in ResearchArea.
      *
-     * @param  Request  $request
+     * @param  ResearchAreaRequest  $request
      * @param  int  $id
      * @return Response
      */
@@ -80,7 +80,7 @@ class ResearchAreaController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from ResearchArea.
      *
      * @param  int  $id
      * @return Response

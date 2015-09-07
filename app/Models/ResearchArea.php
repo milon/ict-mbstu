@@ -12,8 +12,14 @@ class ResearchArea extends Model
     	'name'
     ];
 
+    /**
+     * Relationship with Publication
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function publication()
     {
         return $this->belongsToMany(Publication::class)->withTimestamps();
     }
+    
 }

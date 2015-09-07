@@ -12,6 +12,11 @@ use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
+	/**
+	 * Show dashboard
+	 * 
+	 * @return Response
+	 */
     public function index()
     {
 		$faculty       = Faculty::count();

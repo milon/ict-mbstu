@@ -13,6 +13,10 @@ class CourseController extends Controller
 {
     protected $htmlEditor;
 
+    /**
+     * semester listing for dropdown 
+     * @var arrray
+     */
     protected $semesterList = [
         '' => 'Select semester',
         1  => '1st year 1st semester',
@@ -28,13 +32,18 @@ class CourseController extends Controller
         11 => 'Masters 3rd semester',
     ];
 
+    /**
+     * constructor method 
+     * 
+     * @param HtmlEditor $htmlEditor [description]
+     */
     public function __construct(HtmlEditor $htmlEditor)
     {
         $this->htmlEditor = $htmlEditor;
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Course.
      *
      * @return Response
      */
@@ -47,7 +56,7 @@ class CourseController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Course.
      *
      * @return Response
      */
@@ -59,9 +68,9 @@ class CourseController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Course in storage.
      *
-     * @param  Request  $request
+     * @param  CourseRequest  $request
      * @return Response
      */
     public function store(CourseRequest $request)
@@ -79,7 +88,7 @@ class CourseController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Course.
      *
      * @param  int  $id
      * @return Response
@@ -93,7 +102,7 @@ class CourseController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Course.
      *
      * @param  int  $id
      * @return Response
@@ -107,9 +116,9 @@ class CourseController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Course in storage.
      *
-     * @param  Request  $request
+     * @param  CourseRequest  $request
      * @param  int  $id
      * @return Response
      */
@@ -129,7 +138,7 @@ class CourseController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Course from storage.
      *
      * @param  int  $id
      * @return Response

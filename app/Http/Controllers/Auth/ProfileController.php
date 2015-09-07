@@ -10,6 +10,11 @@ use Laracasts\Flash\Flash;
 
 class ProfileController extends Controller
 {
+    /**
+     * Edit user profile
+     * 
+     * @return Response
+     */
     public function edit()
     {
     	$user = Auth::user();
@@ -17,6 +22,12 @@ class ProfileController extends Controller
     	return view('auth.profile', compact('user'));
     }
 
+    /**
+     * update user profile
+     * 
+     * @param  Request $request 
+     * @return Response
+     */
     public function update(Request $request)
     {
     	$user = Auth::user();

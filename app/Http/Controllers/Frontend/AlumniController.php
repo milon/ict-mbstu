@@ -11,6 +11,11 @@ use App\Http\Controllers\Controller;
 class AlumniController extends Controller
 {
 
+    /**
+     * Show Alumni listing
+     * 
+     * @return Response
+     */
     public function index()
     {
         $alumniList = Alumni::all();
@@ -19,6 +24,12 @@ class AlumniController extends Controller
         return view('frontend.alumni.list', compact('alumniList', 'active'));
     }
 
+    /**
+     * Show specific Alumni Details
+     * 
+     * @param  int $id 
+     * @return Response
+     */
     public function show($id)
     {
         $alumni = Alumni::findOrFail($id);

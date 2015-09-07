@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class NewsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the News.
      *
      * @return Response
      */
@@ -24,7 +24,7 @@ class NewsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified News.
      *
      * @param  int  $id
      * @return Response

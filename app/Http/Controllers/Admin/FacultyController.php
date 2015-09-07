@@ -15,13 +15,18 @@ class FacultyController extends Controller
 {
     protected $htmlEditor;
 
+    /**
+     * constructor method
+     * 
+     * @param HtmlEditor $htmlEditor
+     */
     public function __construct(HtmlEditor $htmlEditor)
     {
         $this->htmlEditor = $htmlEditor;
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Faculty.
      *
      * @return Response
      */
@@ -33,7 +38,7 @@ class FacultyController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Faculty.
      *
      * @return Response
      */
@@ -43,9 +48,9 @@ class FacultyController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Faculty in storage.
      *
-     * @param  Request  $request
+     * @param  FacultyRequest  $request
      * @return Response
      */
     public function store(FacultyRequest $request)
@@ -71,7 +76,7 @@ class FacultyController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Faculty.
      *
      * @param  int  $id
      * @return Response
@@ -84,7 +89,7 @@ class FacultyController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Faculty.
      *
      * @param  int  $id
      * @return Response
@@ -97,9 +102,9 @@ class FacultyController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in Faculty.
      *
-     * @param  Request  $request
+     * @param  FacultyRequest  $request
      * @param  int  $id
      * @return Response
      */
@@ -127,7 +132,7 @@ class FacultyController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Faculty from storage.
      *
      * @param  int  $id
      * @return Response
@@ -158,8 +163,9 @@ class FacultyController extends Controller
 
     /**
      * Save avatar of faculty
+     * 
      * @param  UploadedFile $file   
-     * @param  int       $userId 
+     * @param  int  $userId 
      * @return void
      */
     private function saveProfileImage(UploadedFile $file, $facultyId)

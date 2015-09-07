@@ -12,7 +12,7 @@ use App\Http\Controllers\Controller;
 class ResearchAreaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the ResearchArea.
      *
      * @return Response
      */
@@ -25,7 +25,7 @@ class ResearchAreaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified ResearchArea.
      *
      * @param  int  $id
      * @return Response

@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class JournalController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Journal.
      *
      * @return Response
      */
@@ -24,7 +24,7 @@ class JournalController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Journal.
      *
      * @param  int  $id
      * @return Response

@@ -16,6 +16,11 @@ class Education extends Model
     	'remarks'
     ];
 
+    /**
+     * relation with faculty
+     * 
+     * @return Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function faculty()
     {
     	return $this->belongsTo(Faculty::class);

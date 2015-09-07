@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class ConferenceController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Conference.
      *
      * @return Response
      */
@@ -24,7 +24,7 @@ class ConferenceController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Conference.
      *
      * @param  int  $id
      * @return Response

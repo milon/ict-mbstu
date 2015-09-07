@@ -13,13 +13,18 @@ class AlumniController extends Controller
 {
     protected $htmlEditor;
 
+    /**
+     * constructor 
+     * 
+     * @param HtmlEditor $htmlEditor
+     */
     public function __construct(HtmlEditor $htmlEditor)
     {
         $this->htmlEditor = $htmlEditor;
     }
 
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Alumni.
      *
      * @return Response
      */
@@ -31,7 +36,7 @@ class AlumniController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Alumni.
      *
      * @return Response
      */
@@ -46,14 +51,13 @@ class AlumniController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Alumni in storage.
      *
-     * @param  Request  $request
+     * @param  AlumniRequest  $request
      * @return Response
      */
     public function store(AlumniRequest $request)
     {
-        //return $request->all();
         Alumni::create([
             'name'         => $request->name,
             'student_id'   => $request->student_id,
@@ -70,7 +74,7 @@ class AlumniController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Alumni.
      *
      * @param  int  $id
      * @return Response
@@ -83,7 +87,7 @@ class AlumniController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Alumni.
      *
      * @param  int  $id
      * @return Response
@@ -100,9 +104,9 @@ class AlumniController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Alumni in storage.
      *
-     * @param  Request  $request
+     * @param  AlumniRequest  $request
      * @param  int  $id
      * @return Response
      */
@@ -125,7 +129,7 @@ class AlumniController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Alumni from storage.
      *
      * @param  int  $id
      * @return Response

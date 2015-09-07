@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class ResearchGroupController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the ResearchGroup.
      *
      * @return Response
      */
@@ -24,7 +24,7 @@ class ResearchGroupController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified ResearchGroup.
      *
      * @param  int  $id
      * @return Response

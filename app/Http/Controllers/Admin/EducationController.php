@@ -14,14 +14,19 @@ class EducationController extends Controller
 {
     protected $htmlEditor;
 
+    /**
+     * constructor method
+     * @param HtmlEditor $htmlEditor
+     */
     public function __construct(HtmlEditor $htmlEditor)
     {
         $this->htmlEditor = $htmlEditor;
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new Education.
      *
+     * @param  int      $facultyId
      * @return Response
      */
     public function create($facultyId)
@@ -32,10 +37,11 @@ class EducationController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Education in storage.
      *
-     * @param  Request  $request
-     * @return Response
+     * @param  int      $facultyId
+     * @param  EducationRequest  $request
+     * @return Response 
      */
     public function store($facultyId, EducationRequest $request)
     {
@@ -53,8 +59,9 @@ class EducationController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Education.
      *
+     * @param  int  $facultyId
      * @param  int  $id
      * @return Response
      */
@@ -66,8 +73,9 @@ class EducationController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified Education.
      *
+     * @param  int  $facultyId
      * @param  int  $id
      * @return Response
      */
@@ -82,7 +90,8 @@ class EducationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  Request  $request
+     * @param  int $facultyId 
+     * @param  EducationRequest  $request
      * @param  int  $id
      * @return Response
      */
@@ -103,6 +112,7 @@ class EducationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
+     * @param  int $facultyId 
      * @param  int  $id
      * @return Response
      */

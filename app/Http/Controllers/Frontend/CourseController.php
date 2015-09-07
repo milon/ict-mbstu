@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class CourseController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Course.
      *
      * @return Response
      */
@@ -24,7 +24,7 @@ class CourseController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Course.
      *
      * @param  int  $id
      * @return Response
