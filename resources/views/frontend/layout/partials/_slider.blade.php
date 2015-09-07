@@ -2,7 +2,7 @@
     <div class="carousel slide">
         <ol class="carousel-indicators">
             <li data-target="#main-slider" data-slide-to="0" class="active"></li>
-            {{-- <li data-target="#main-slider" data-slide-to="1"></li> --}}
+            <li data-target="#main-slider" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner">
 
@@ -10,7 +10,13 @@
                 <div class="slider-img">
                     <img src="{{ url('/front_panel/images/slider/image-1.jpg') }}" class="img-responsive">
                 </div>
-            </div><!--/.item-->
+            </div>
+
+            <div class="item">
+                <div class="slider-img">
+                    <img src="{{ url('/front_panel/images/slider/image-2.jpg') }}" class="img-responsive">
+                </div>
+            </div>
 
 {{--             <div class="item" style="background-image: url(/front_panel/images/slider/bg2.jpg)">
                 <div class="container">
