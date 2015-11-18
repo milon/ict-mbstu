@@ -11,7 +11,7 @@ class PagesController extends Controller
 {
 	/**
 	 * Show home page
-	 * 
+	 *
 	 * @return Response
 	 */
     public function home()
@@ -21,11 +21,30 @@ class PagesController extends Controller
 
     /**
      * Show contact page
-     * 
+     *
      * @return Response
      */
     public function contact()
     {
         return view('frontend.pages.contact', ['active' => 'about_us']);
     }
+
+
+    public function bsc()
+    {
+        return view('frontend.pages.bsc', ['active' => 'student']);
+    }
+
+
+    public function msc()
+    {
+        return view('frontend.pages.msc', ['active' => 'student']);
+    }
+
+
+    public function admission()
+    {
+        return view('frontend.pages.admission', ['active' => 'student']);
+    }
+
 }
