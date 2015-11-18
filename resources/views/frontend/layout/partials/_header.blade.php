@@ -14,6 +14,8 @@
                     <div class="social">
                         <ul class="social-share">
                             <li><a target="_blank" href="https://www.facebook.com/InformationCommunicationTechnologymbstu"><i class="fa fa-facebook"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,6 +63,15 @@
                     </li>
 
                     <li {{ ($active == 'course')?'class=active':'' }}><a href="{{ url('/course') }}">Courses</a></li>
+
+                    <li class="dropdown {{ ($active == 'student')?'active':'' }}">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Students <i class="fa fa-angle-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ url('/bsc-student') }}">BSc Engineering</a></li>
+                            <li><a href="{{ url('/msc-student') }}">MSc Engineering</a></li>
+                            <li><a href="{{ url('/admission') }}">Admission</a></li>
+                        </ul>
+                    </li>
 
                     <li {{ ($active == 'alumni')?'class=active':'' }}><a href="{{ url('/alumni') }}">Alumni</a></li>
 

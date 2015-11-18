@@ -4,6 +4,10 @@
 Route::get('/', 'Frontend\PagesController@home');
 Route::get('/contact', 'Frontend\PagesController@contact');
 
+Route::get('/bsc-student', 'Frontend\PagesController@bsc');
+Route::get('/msc-student', 'Frontend\PagesController@msc');
+Route::get('/admission', 'Frontend\PagesController@admission');
+
 Route::resource('/alumni', 'Frontend\AlumniController', ['only' => ['index', 'show']]);
 Route::resource('/faculty', 'Frontend\FacultyController', ['only' => ['index', 'show']]);
 Route::resource('/journal', 'Frontend\JournalController', ['only' => ['index', 'show']]);
