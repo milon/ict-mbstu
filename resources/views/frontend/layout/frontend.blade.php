@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Nuruzzaman Milon">
-    <title>ICT-MBSTU</title>
+    <title>@yield('title', 'ICT-MBSTU')</title>
 
     <!-- core CSS -->
     <link href="{{ asset('/front_panel/css/bootstrap.min.css') }}" rel="stylesheet">
