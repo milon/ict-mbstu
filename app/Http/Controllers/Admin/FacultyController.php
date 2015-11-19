@@ -17,7 +17,7 @@ class FacultyController extends Controller
 
     /**
      * constructor method
-     * 
+     *
      * @param HtmlEditor $htmlEditor
      */
     public function __construct(HtmlEditor $htmlEditor)
@@ -33,7 +33,7 @@ class FacultyController extends Controller
     public function index()
     {
         $facultyList = Faculty::all();
-        
+
         return view('admin.faculty.list', compact('facultyList'));
     }
 
@@ -128,7 +128,7 @@ class FacultyController extends Controller
         }
 
         Flash::success('Faculty dpdated successfully.');
-        return redirect('/admin/faculty');     
+        return redirect('/admin/faculty');
     }
 
     /**
@@ -141,10 +141,6 @@ class FacultyController extends Controller
     {
         $faculty = Faculty::find($id);
 
-        if(file_exists(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"))){
-            @unlink(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"));
-        }
-
         //delete education
         $faculty->education()->delete();
 
@@ -156,16 +152,16 @@ class FacultyController extends Controller
 
         //delete faculty
         $faculty->delete();
-        
+
         Flash::success('Faculty deleted successfully.');
         return redirect('/admin/faculty');
     }
 
     /**
      * Save avatar of faculty
-     * 
-     * @param  UploadedFile $file   
-     * @param  int  $userId 
+     *
+     * @param  UploadedFile $file
+     * @param  int  $userId
      * @return void
      */
     private function saveProfileImage(UploadedFile $file, $facultyId)

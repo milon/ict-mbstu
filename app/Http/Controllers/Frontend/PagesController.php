@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Models\News;
 use App\Http\Controllers\Controller;
 
 class PagesController extends Controller
@@ -16,7 +17,9 @@ class PagesController extends Controller
 	 */
     public function home()
     {
-        return view('frontend.pages.home', ['active' => 'home']);
+        $newsList = News::published()->take(5)->get();
+
+        return view('frontend.pages.home', ['active' => 'home', 'newsList' => $newsList]);
     }
 
     /**
@@ -29,7 +32,9 @@ class PagesController extends Controller
         return view('frontend.pages.contact', ['active' => 'about_us']);
     }
 
-
+    /**
+     *
+     */
     public function bsc()
     {
         return view('frontend.pages.bsc', ['active' => 'student']);

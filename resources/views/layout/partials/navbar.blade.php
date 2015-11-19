@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">ICT-MBSTU</a>
+            <a class="navbar-brand" href="{{ url('/admin') }}">ICT-MBSTU</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -27,13 +27,13 @@
                     </li>
                     <li>
                         <a href="{{ url('/admin/profile') }}">
-                            <i class="fa fa-user"></i> 
+                            <i class="fa fa-user"></i>
                             User Profile
                         </a>
                     </li>
                     <li>
                         <a href="{{ url('auth/logout') }}">
-                            <i class="fa fa-sign-out"></i> 
+                            <i class="fa fa-sign-out"></i>
                             Sign Out
                         </a>
                     </li>

@@ -21,7 +21,7 @@ class Faculty extends Model
 
     /**
      * Relationship with education
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function education()
@@ -31,7 +31,7 @@ class Faculty extends Model
 
     /**
      * Relationship with publication
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function publication()
@@ -41,7 +41,7 @@ class Faculty extends Model
 
     /**
      * Relationship with journal
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function journal()
@@ -51,7 +51,7 @@ class Faculty extends Model
 
     /**
      * Relationship with conference
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function conference()
@@ -70,7 +70,7 @@ class Faculty extends Model
 
     /**
      * Get avatar value
-     * 
+     *
      * @return string url
      */
     public function getAvatarAttribute()
@@ -79,6 +79,15 @@ class Faculty extends Model
             return url("uploads/faculty/faculty_{$this->id}.jpg");
         }
         return url("images/faculty_default.jpg");
+    }
+
+    public function delete()
+    {
+        if(file_exists(public_path("uploads/faculty/faculty_{$this->id}.jpg"))){
+            @unlink(public_path("uploads/faculty/faculty_{$this->id}.jpg"));
+        }
+
+        parent::delete();
     }
 
 }
