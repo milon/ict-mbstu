@@ -1,16 +1,7 @@
 @extends('frontend.layout.frontend')
 
 @section('content')
-    <section id="feature" >
-        <div class="container">
-            <div class="center wow fadeInDown">
-                <h2>Course Syllabus</h2>
-                <p class="lead">
-                    Department of Information and Communication Technology have a world class course curriculum.
-                </p>
-            </div>
-        </div><!--/.container-->
-    </section>
+    @include('frontend.course._title')
 
     <section class="faculty-detail">
         <div class="container">
@@ -18,13 +9,7 @@
                 <h1 class="text-center">First Year First Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '1'])
@@ -40,13 +25,7 @@
                 <h1 class="text-center">First Year Second Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '2'])
@@ -62,13 +41,7 @@
                 <h1 class="text-center">Second Year First Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '3'])
@@ -84,13 +57,7 @@
                 <h1 class="text-center">Second Year Second Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '4'])
@@ -106,13 +73,7 @@
                 <h1 class="text-center">Third Year First Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '5'])
@@ -128,13 +89,7 @@
                 <h1 class="text-center">Third Year Second Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '6'])
@@ -150,13 +105,7 @@
                 <h1 class="text-center">Fourth Year First Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '7'])
@@ -172,13 +121,7 @@
                 <h1 class="text-center">Fourth Year Second Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '8'])
@@ -194,13 +137,7 @@
                 <h1 class="text-center">Masters First Semester</h1>
 
                 <table class="table table-striped m-top-20">
-                    <thead>
-                    <tr>
-                        <th>Course Code</th>
-                        <th>Course Title</th>
-                        <th>Credit</th>
-                    </tr>
-                    </thead>
+                    @include('frontend.course._table_header')
 
                     <tbody>
                         @include('frontend.course._body', ['semester' => '9'])

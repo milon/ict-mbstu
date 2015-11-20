@@ -17,7 +17,7 @@ class PagesController extends Controller
 	 */
     public function home()
     {
-        $newsList = News::published()->take(5)->get();
+        $newsList = News::published()->take(7)->get();
 
         return view('frontend.pages.home', ['active' => 'home', 'newsList' => $newsList]);
     }
@@ -50,6 +50,16 @@ class PagesController extends Controller
     public function admission()
     {
         return view('frontend.pages.admission', ['active' => 'student']);
+    }
+
+    public function general()
+    {
+        return view('frontend.pages.general', ['active' => 'about_us']);
+    }
+
+    public function gallery()
+    {
+        return view('frontend.pages.gallery', ['active' => 'about_us']);
     }
 
 }

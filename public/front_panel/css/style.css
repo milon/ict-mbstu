@@ -1,3 +1,7 @@
+h2.heading{
+    font-size: 28px;
+}
+
 #footer{
     border-top: 5px solid #c52d2f;
 }
@@ -41,10 +45,11 @@
     border-bottom: 1px solid #eeeeee;
 }
 
-.nav .news-li:last-child{
-    border-bottom: 0;
-}
-
 .gallery img{
     max-height: 175px;
+}
+
+.scroll{
+    height:400px;
+    overflow-y:scroll;
 }

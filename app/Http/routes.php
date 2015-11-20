@@ -3,6 +3,8 @@
 // Frontend Routes
 Route::get('/', 'Frontend\PagesController@home');
 Route::get('/contact', 'Frontend\PagesController@contact');
+Route::get('/general-information', 'Frontend\PagesController@general');
+Route::get('/gallery', 'Frontend\PagesController@gallery');
 
 Route::get('/bsc-student', 'Frontend\PagesController@bsc');
 Route::get('/msc-student', 'Frontend\PagesController@msc');
