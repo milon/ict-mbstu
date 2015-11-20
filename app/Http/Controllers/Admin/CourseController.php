@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use App\Helpers\HtmlEditor\HtmlEditor;
-use App\Http\Requests\CourseRequest;
-use App\Http\Controllers\Controller;
 use App\Models\Course;
 use Laracasts\Flash\Flash;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\CourseRequest;
+use App\Helpers\HtmlEditor\HtmlEditor;
 
 class CourseController extends Controller
 {
     protected $htmlEditor;
 
     /**
-     * semester listing for dropdown 
+     * semester listing for dropdown
      * @var arrray
      */
     protected $semesterList = [
@@ -33,8 +33,8 @@ class CourseController extends Controller
     ];
 
     /**
-     * constructor method 
-     * 
+     * constructor method
+     *
      * @param HtmlEditor $htmlEditor [description]
      */
     public function __construct(HtmlEditor $htmlEditor)
@@ -129,7 +129,7 @@ class CourseController extends Controller
             'code'        => $request->code,
             'name'        => $request->name,
             'semester'    => $request->semester,
-            'credit'      => $request-> credit,
+            'credit'      => $request->credit,
             'description' => e($this->htmlEditor->parseHtml($request->description))
         ]);
 

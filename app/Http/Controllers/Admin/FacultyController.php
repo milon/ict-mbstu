@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\User;
 use App\Models\Faculty;
-use App\Http\Requests\FacultyRequest;
-use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
-use App\Helpers\HtmlEditor\HtmlEditor;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
+use App\Http\Requests\FacultyRequest;
+use App\Helpers\HtmlEditor\HtmlEditor;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class FacultyController extends Controller
@@ -55,6 +56,13 @@ class FacultyController extends Controller
      */
     public function store(FacultyRequest $request)
     {
+        $user = User::create([
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'type'     => 'faculty',
+            'password' => bcrypt($request->password)
+        ]);
+
         $faculty = Faculty::create([
             'name'            => $request->name,
             'designation'     => $request->designation,
@@ -63,7 +71,8 @@ class FacultyController extends Controller
             'website'         => $request->website,
             'address'         => $request->address,
             'education_leave' => $request->has('education_leave')?1:0,
-            'bio'             => e($this->htmlEditor->parseHtml($request->bio))
+            'bio'             => e($this->htmlEditor->parseHtml($request->bio)),
+            'user_id'         => $user->id
         ]);
 
         //Profile Picture

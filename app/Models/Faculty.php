@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Faculty extends Model
@@ -16,7 +17,8 @@ class Faculty extends Model
     	'designation',
     	'address',
     	'bio',
-        'education_leave'
+        'education_leave',
+        'user_id'
     ];
 
     /**
@@ -86,6 +88,8 @@ class Faculty extends Model
         if(file_exists(public_path("uploads/faculty/faculty_{$this->id}.jpg"))){
             @unlink(public_path("uploads/faculty/faculty_{$this->id}.jpg"));
         }
+
+        User::where('user_id', $this->user_id)->delete();
 
         parent::delete();
     }

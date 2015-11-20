@@ -13,7 +13,13 @@ class FacultyRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        //dd($this);
+        if(\Auth::user()->type == 'admin'){
+            return true;
+        }
+
+
+        //if(\Auth::id() == )
     }
 
     /**
@@ -25,13 +31,14 @@ class FacultyRequest extends Request
     {
         return [
             'name'        => 'required',
-            'email'       => 'required',
+            'email'       => 'required|email|unique:users,email',
             'phone'       => 'required',
             'website'     => '',
             'designation' => 'required',
             'address'     => '',
             'avatar'      => 'image',
-            'bio'         => ''
+            'bio'         => '',
+            'password'    => 'required|confirmed'
         ];
     }
 

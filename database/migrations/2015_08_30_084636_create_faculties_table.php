@@ -21,6 +21,7 @@ class CreateFacultiesTable extends Migration
             $table->string('website');
             $table->text('address');
             $table->text('bio');
+            $table->unsignedInteger('user_id');
             $table->boolean('education_leave')->default(0);
             $table->timestamps();
         });

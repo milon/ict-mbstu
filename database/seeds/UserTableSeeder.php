@@ -17,7 +17,8 @@ class UserTableSeeder extends Seeder
         User::create([
     		'name'		=> 'Admin',
     		'email'		=> 'admin@ict-mbstu.com',
-    		'password' 	=> bcrypt('ict-mbstu')
+    		'password' 	=> bcrypt('ict-mbstu'),
+            'type'      => 'admin'
     	]);
     }
 }
