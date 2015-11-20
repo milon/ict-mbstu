@@ -17,7 +17,7 @@ class CreateLectureTable extends Migration
             $table->unsignedInteger('user_id');
             $table->string('title');
             $table->text('description');
-            $table->string('file_path')->default(null);
+            $table->string('file_path')->nullable();
             $table->timestamps();
         });
     }

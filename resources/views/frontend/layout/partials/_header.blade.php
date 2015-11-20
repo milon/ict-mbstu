@@ -71,6 +71,7 @@
                             <li><a href="{{ url('/bsc-student') }}">BSc Engineering</a></li>
                             <li><a href="{{ url('/msc-student') }}">MSc Engineering</a></li>
                             <li><a href="{{ url('/admission') }}">Admission</a></li>
+                            <li><a href="{{ url('/lecture') }}">Class Lecture</a></li>
                         </ul>
                     </li>
 

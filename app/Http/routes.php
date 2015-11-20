@@ -18,6 +18,7 @@ Route::resource('/news', 'Frontend\NewsController', ['only' => ['index', 'show']
 Route::resource('/course', 'Frontend\CourseController', ['only' => ['index', 'show']]);
 Route::resource('/research_area', 'Frontend\ResearchAreaController', ['only' => ['index', 'show']]);
 Route::resource('/research_group', 'Frontend\ResearchGroupController', ['only' => ['index', 'show']]);
+Route::resource('/lecture', 'Frontend\LectureController', ['only' => ['index', 'show']]);
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
