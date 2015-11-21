@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Http\Requests;
 use App\Models\Publication;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ConferenceController extends Controller

@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Models\Faculty;
+use Illuminate\Database\Eloquent\Model;
 
 class ResearchGroup extends Model
 {
@@ -23,5 +23,5 @@ class ResearchGroup extends Model
     {
     	return $this->belongsTo(Faculty::class, 'co_ordinator');
     }
-    
+
 }

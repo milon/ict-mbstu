@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Models\News;
-use App\Http\Requests\NewsRequest;
-use App\Helpers\HtmlEditor\HtmlEditor;
-use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
+use Illuminate\Http\Request;
+use App\Http\Requests\NewsRequest;
+use App\Http\Controllers\Controller;
+use App\Helpers\HtmlEditor\HtmlEditor;
 
 class NewsController extends Controller
 {
@@ -15,7 +15,7 @@ class NewsController extends Controller
 
     /**
      * constructor method
-     * 
+     *
      * @param HtmlEditor $htmlEditor
      */
     public function __construct(HtmlEditor $htmlEditor)

@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Models\News;
+use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PagesController extends Controller

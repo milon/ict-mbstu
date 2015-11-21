@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Http\Requests;
 use App\Models\Publication;
 use App\Models\ResearchArea;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class ResearchAreaController extends Controller

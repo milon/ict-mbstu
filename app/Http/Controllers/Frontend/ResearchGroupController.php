@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\ResearchGroup;
-use Illuminate\Http\Request;
-
 use App\Http\Requests;
+use Illuminate\Http\Request;
+use App\Models\ResearchGroup;
 use App\Http\Controllers\Controller;
 
 class ResearchGroupController extends Controller
