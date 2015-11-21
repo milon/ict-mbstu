@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="col-sm-4">
-                <h2 class="heading">Recent News</h2>
+                <h2 class="heading"><a href="{{ url('/news') }}">Recent News</a></h2>
                 <hr>
                 @if(count($newsList))
                     <ul class="nav nav-pills nav-stacked scroll">
@@ -28,7 +28,7 @@
                     <h4>No news available</h4>
                 @endif
 
-                <h2 class="heading">Contact</h2>
+                <h2 class="heading"><a href="{{ url('/contact') }}">Contact</a></h2>
                 <hr>
                 <p class="lead">
                     <i class="fa fa-phone-square"></i> +88 0921 55399 <br>
@@ -65,29 +65,29 @@
 
     <div class="container gallery">
         <div class="row">
-            <h2 class="heading">Image Gallery</h2>
+            <h2 class="heading"><a href="{{ url('/gallery') }}">Image Gallery</a></h2>
             <hr>
         </div>
 
         <div class="row">
             <div class="col-sm-3">
                 <a class="thumbnail" href="{{ url('/front_panel/images/gallery/06.jpg') }}" data-lity>
-                    <img class="img-responsive" src="{{ url('/front_panel/images/gallery/06.jpg') }}" alt="" />
+                    <img class="img-responsive" src="{{ url('/front_panel/images/gallery/thumbnail/t_06.jpg') }}" alt="" />
                 </a>
             </div>
             <div class="col-sm-3">
                 <a class="thumbnail" href="{{ url('/front_panel/images/gallery/02.jpg') }}" data-lity>
-                    <img src="{{ url('/front_panel/images/gallery/02.jpg') }}" alt="" />
+                    <img src="{{ url('/front_panel/images/gallery/thumbnail/t_02.jpg') }}" alt="" />
                 </a>
             </div>
             <div class="col-sm-3">
                 <a class="thumbnail" href="{{ url('/front_panel/images/gallery/07.jpg') }}" data-lity>
-                    <img src="{{ url('/front_panel/images/gallery/07.jpg') }}" alt="" />
+                    <img src="{{ url('/front_panel/images/gallery/thumbnail/t_07.jpg') }}" alt="" />
                 </a>
             </div>
             <div class="col-sm-3">
                 <a class="thumbnail" href="{{ url('/front_panel/images/gallery/08.jpg') }}" data-lity>
-                    <img src="{{ url('/front_panel/images/gallery/08.jpg') }}" alt="" />
+                    <img src="{{ url('/front_panel/images/gallery/thumbnail/t_08.jpg') }}" alt="" />
                 </a>
             </div>
         </div>

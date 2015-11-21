@@ -2,6 +2,10 @@ h2.heading{
     font-size: 28px;
 }
 
+h2.heading a{
+    color: #4e4e4e;
+}
+
 #footer{
     border-top: 5px solid #c52d2f;
 }
