@@ -75,7 +75,7 @@
     </div>
 </div>
 
-{{-- Password COnfirmation --}}
+{{-- Password Confirmation --}}
 <div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
     {!! Form::label('password_confirmation', 'Password Confirmation', ['class' => 'col-sm-3 control-label']) !!}
     <div class="col-sm-8">

@@ -13,13 +13,7 @@ class FacultyRequest extends Request
      */
     public function authorize()
     {
-        //dd($this);
-        if(\Auth::user()->type == 'admin'){
-            return true;
-        }
-
-
-        //if(\Auth::id() == )
+        return true;
     }
 
     /**
