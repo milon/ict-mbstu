@@ -44,9 +44,10 @@
                     <li class="dropdown {{ ($active == 'about_us')?'active':'' }}">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">About Us <i class="fa fa-angle-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">General Information</a></li>
+                            <li><a href="{{ url('/general-information') }}">General Information</a></li>
                             <li><a href="#">Message of Head</a></li>
                             <li><a href="{{ url('/contact') }}">Contact Info</a></li>
+                            <li><a href="{{ url('/gallery') }}">Image Gallery</a></li>
                         </ul>
                     </li>
 
@@ -70,6 +71,7 @@
                             <li><a href="{{ url('/bsc-student') }}">BSc Engineering</a></li>
                             <li><a href="{{ url('/msc-student') }}">MSc Engineering</a></li>
                             <li><a href="{{ url('/admission') }}">Admission</a></li>
+                            <li><a href="{{ url('/lecture') }}">Class Lecture</a></li>
                         </ul>
                     </li>
 

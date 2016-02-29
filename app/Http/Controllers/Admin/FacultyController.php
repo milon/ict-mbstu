@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
+use App\User;
 use App\Models\Faculty;
-use App\Http\Requests\FacultyRequest;
-use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
-use App\Helpers\HtmlEditor\HtmlEditor;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Intervention\Image\Facades\Image;
+use App\Http\Requests\FacultyRequest;
+use App\Helpers\HtmlEditor\HtmlEditor;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class FacultyController extends Controller
@@ -17,7 +18,7 @@ class FacultyController extends Controller
 
     /**
      * constructor method
-     * 
+     *
      * @param HtmlEditor $htmlEditor
      */
     public function __construct(HtmlEditor $htmlEditor)
@@ -33,7 +34,7 @@ class FacultyController extends Controller
     public function index()
     {
         $facultyList = Faculty::all();
-        
+
         return view('admin.faculty.list', compact('facultyList'));
     }
 
@@ -55,6 +56,13 @@ class FacultyController extends Controller
      */
     public function store(FacultyRequest $request)
     {
+        $user = User::create([
+            'name'     => $request->name,
+            'email'    => $request->email,
+            'type'     => 'faculty',
+            'password' => bcrypt($request->password)
+        ]);
+
         $faculty = Faculty::create([
             'name'            => $request->name,
             'designation'     => $request->designation,
@@ -63,7 +71,8 @@ class FacultyController extends Controller
             'website'         => $request->website,
             'address'         => $request->address,
             'education_leave' => $request->has('education_leave')?1:0,
-            'bio'             => e($this->htmlEditor->parseHtml($request->bio))
+            'bio'             => e($this->htmlEditor->parseHtml($request->bio)),
+            'user_id'         => $user->id
         ]);
 
         //Profile Picture
@@ -128,7 +137,7 @@ class FacultyController extends Controller
         }
 
         Flash::success('Faculty dpdated successfully.');
-        return redirect('/admin/faculty');     
+        return redirect('/admin/faculty');
     }
 
     /**
@@ -141,10 +150,6 @@ class FacultyController extends Controller
     {
         $faculty = Faculty::find($id);
 
-        if(file_exists(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"))){
-            @unlink(public_path("uploads/faculty/faculty_{$faculty->id}.jpg"));
-        }
-
         //delete education
         $faculty->education()->delete();
 
@@ -156,16 +161,16 @@ class FacultyController extends Controller
 
         //delete faculty
         $faculty->delete();
-        
+
         Flash::success('Faculty deleted successfully.');
         return redirect('/admin/faculty');
     }
 
     /**
      * Save avatar of faculty
-     * 
-     * @param  UploadedFile $file   
-     * @param  int  $userId 
+     *
+     * @param  UploadedFile $file
+     * @param  int  $userId
      * @return void
      */
     private function saveProfileImage(UploadedFile $file, $facultyId)

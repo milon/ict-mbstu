@@ -64,6 +64,25 @@
     </div>
 </div>
 
+{{-- Password --}}
+<div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+    {!! Form::label('password', 'Password', ['class' => 'col-sm-3 control-label']) !!}
+    <div class="col-sm-8">
+        {!! Form::password('password', ['class' => 'form-control']) !!}
+        <span class="help-block text-danger">
+            {{ $errors->first('password') }}
+        </span>
+    </div>
+</div>
+
+{{-- Password Confirmation --}}
+<div class="form-group{{ $errors->has('phone') ? ' has-error' : '' }}">
+    {!! Form::label('password_confirmation', 'Password Confirmation', ['class' => 'col-sm-3 control-label']) !!}
+    <div class="col-sm-8">
+        {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
+    </div>
+</div>
+
 {{-- leave --}}
 <div class="form-group{{ $errors->has('leave') ? ' has-error' : '' }}">
     {!! Form::label('leave', 'Education Leave', ['class' => 'col-sm-3 control-label']) !!}
@@ -81,7 +100,7 @@
     <div class="col-sm-8">
         <div class="fileinput fileinput-new input-group" data-provides="fileinput">
 		  	<div class="form-control" data-trigger="fileinput">
-			  	<i class="glyphicon glyphicon-file fileinput-exists"></i> 
+			  	<i class="glyphicon glyphicon-file fileinput-exists"></i>
 			  	<span class="fileinput-filename"></span>
 		  	</div>
 	  		<span class="input-group-addon btn btn-default btn-file">

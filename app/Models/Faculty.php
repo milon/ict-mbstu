@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 
 class Faculty extends Model
@@ -16,12 +17,13 @@ class Faculty extends Model
     	'designation',
     	'address',
     	'bio',
-        'education_leave'
+        'education_leave',
+        'user_id'
     ];
 
     /**
      * Relationship with education
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function education()
@@ -31,7 +33,7 @@ class Faculty extends Model
 
     /**
      * Relationship with publication
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function publication()
@@ -41,7 +43,7 @@ class Faculty extends Model
 
     /**
      * Relationship with journal
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function journal()
@@ -51,7 +53,7 @@ class Faculty extends Model
 
     /**
      * Relationship with conference
-     * 
+     *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function conference()
@@ -70,7 +72,7 @@ class Faculty extends Model
 
     /**
      * Get avatar value
-     * 
+     *
      * @return string url
      */
     public function getAvatarAttribute()
@@ -79,6 +81,17 @@ class Faculty extends Model
             return url("uploads/faculty/faculty_{$this->id}.jpg");
         }
         return url("images/faculty_default.jpg");
+    }
+
+    public function delete()
+    {
+        if(file_exists(public_path("uploads/faculty/faculty_{$this->id}.jpg"))){
+            @unlink(public_path("uploads/faculty/faculty_{$this->id}.jpg"));
+        }
+
+        User::where('user_id', $this->user_id)->delete();
+
+        parent::delete();
     }
 
 }

@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Helpers\HtmlEditor\HtmlEditor;
-use App\Models\Education;
-use Illuminate\Http\Request;
 use App\Models\Faculty;
-use App\Http\Requests\EducationRequest;
-use App\Http\Controllers\Controller;
+use App\Models\Education;
 use Laracasts\Flash\Flash;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Helpers\HtmlEditor\HtmlEditor;
+use App\Http\Requests\EducationRequest;
 
 class EducationController extends Controller
 {
@@ -41,7 +41,7 @@ class EducationController extends Controller
      *
      * @param  int      $facultyId
      * @param  EducationRequest  $request
-     * @return Response 
+     * @return Response
      */
     public function store($facultyId, EducationRequest $request)
     {
@@ -90,7 +90,7 @@ class EducationController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  int $facultyId 
+     * @param  int $facultyId
      * @param  EducationRequest  $request
      * @param  int  $id
      * @return Response
@@ -112,7 +112,7 @@ class EducationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $facultyId 
+     * @param  int $facultyId
      * @param  int  $id
      * @return Response
      */

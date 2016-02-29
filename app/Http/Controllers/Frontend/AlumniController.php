@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Frontend;
 
+use App\Http\Requests;
 use App\Models\Alumni;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 class AlumniController extends Controller
@@ -13,7 +12,7 @@ class AlumniController extends Controller
 
     /**
      * Show Alumni listing
-     * 
+     *
      * @return Response
      */
     public function index()
@@ -26,8 +25,8 @@ class AlumniController extends Controller
 
     /**
      * Show specific Alumni Details
-     * 
-     * @param  int $id 
+     *
+     * @param  int $id
      * @return Response
      */
     public function show($id)

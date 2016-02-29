@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Alumni;
+use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
-use App\Helpers\HtmlEditor\HtmlEditor;
 use App\Http\Requests\AlumniRequest;
 use App\Http\Controllers\Controller;
-use Laracasts\Flash\Flash;
+use App\Helpers\HtmlEditor\HtmlEditor;
 
 class AlumniController extends Controller
 {
     protected $htmlEditor;
 
     /**
-     * constructor 
-     * 
+     * constructor
+     *
      * @param HtmlEditor $htmlEditor
      */
     public function __construct(HtmlEditor $htmlEditor)

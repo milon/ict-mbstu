@@ -1,16 +1,7 @@
 @extends('frontend.layout.frontend')
 
 @section('content')
-    <section id="feature" >
-        <div class="container">
-            <div class="center wow fadeInDown">
-                <h2>Department of ICT Faculty</h2>
-                <p class="lead">
-                    Department of ICT have some great faculty.
-                </p>
-            </div>
-        </div><!--/.container-->
-    </section>
+    @include('frontend.faculty._title')
 
     <section id="recent-works faculty-detail">
         <div class="container">

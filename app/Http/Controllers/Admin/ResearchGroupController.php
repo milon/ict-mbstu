@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Faculty;
+use Laracasts\Flash\Flash;
 use Illuminate\Http\Request;
 use App\Models\ResearchGroup;
-use App\Models\Faculty;
-use App\Http\Requests\ResearchGroupRequest;
 use App\Http\Controllers\Controller;
-use Laracasts\Flash\Flash;
 use App\Helpers\HtmlEditor\HtmlEditor;
+use App\Http\Requests\ResearchGroupRequest;
 
 class ResearchGroupController extends Controller
 {
@@ -16,7 +16,7 @@ class ResearchGroupController extends Controller
 
     /**
      * constructor method
-     * 
+     *
      * @param HtmlEditor $htmlEditor
      */
     public function __construct(HtmlEditor $htmlEditor)

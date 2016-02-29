@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
-use App\Models\ResearchArea;
-use App\Http\Requests\ResearchAreaRequest;
-use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
+use App\Models\ResearchArea;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ResearchAreaRequest;
 
 class ResearchAreaController extends Controller
 {
@@ -91,6 +91,6 @@ class ResearchAreaController extends Controller
         $researchArea->delete();
 
         Flash::success('Research area deleted successfully.');
-        return redirect('/admin/research_area');   
+        return redirect('/admin/research_area');
     }
 }

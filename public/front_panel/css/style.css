@@ -1,4 +1,10 @@
+h2.heading{
+    font-size: 28px;
+}
 
+h2.heading a{
+    color: #4e4e4e;
+}
 
 #footer{
     border-top: 5px solid #c52d2f;
@@ -22,4 +28,32 @@
 
 .m-top-20{
     margin-top: 20px;
+}
+
+.carousel-indicators li{
+    width: 20px;
+    height: 20px;
+    border: 3px solid #c52d2f;
+}
+
+.carousel-indicators li.active{
+    width: 20px;
+    height: 20px;
+}
+
+.carousel-control span.glyphicon{
+    color: #c52d2f;
+}
+
+.nav .news-li{
+    border-bottom: 1px solid #eeeeee;
+}
+
+.gallery img{
+    max-height: 175px;
+}
+
+.scroll{
+    height:400px;
+    overflow-y:scroll;
 }

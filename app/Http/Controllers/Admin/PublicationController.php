@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Helpers\HtmlEditor\HtmlEditor;
 use App\Models\Faculty;
-use App\Models\Publication;
-use App\Models\ResearchArea;
-use Illuminate\Http\Request;
-use App\Http\Requests\PublicationRequest;
-use App\Http\Controllers\Controller;
 use Laracasts\Flash\Flash;
+use App\Models\Publication;
+use Illuminate\Http\Request;
+use App\Models\ResearchArea;
+use App\Http\Controllers\Controller;
+use App\Helpers\HtmlEditor\HtmlEditor;
+use App\Http\Requests\PublicationRequest;
 
 class PublicationController extends Controller
 {
@@ -17,7 +17,7 @@ class PublicationController extends Controller
 
     /**
      * constructor method
-     * 
+     *
      * @param HtmlEditor $htmlEditor
      */
     public function __construct(HtmlEditor $htmlEditor)
@@ -78,7 +78,7 @@ class PublicationController extends Controller
     /**
      * Display the specified Publication.
      *
-     * @param  int $facultyId 
+     * @param  int $facultyId
      * @param  int  $id
      * @return Response
      */
@@ -120,7 +120,7 @@ class PublicationController extends Controller
     /**
      * Update the specified Publication in storage.
      *
-     * @param  int $facultyId 
+     * @param  int $facultyId
      * @param  PublicationRequest  $request
      * @param  int  $id
      * @return Response
@@ -145,7 +145,7 @@ class PublicationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int $facultyId 
+     * @param  int $facultyId
      * @param  int  $id
      * @return Response
      */

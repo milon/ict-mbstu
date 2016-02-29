@@ -15,14 +15,14 @@
 
 	<li class="list-group-item">
 		<a href="{{ url('/admin/research_area') }}">
-			<i class="fa fa-map-o"></i> 
+			<i class="fa fa-map-o"></i>
 			Research Area
 		</a>
 	</li>
 
 	<li class="list-group-item">
 		<a href="{{ url('/admin/research_group') }}">
-			<i class="fa fa-institution"></i> 
+			<i class="fa fa-institution"></i>
 			Research Group
 		</a>
 	</li>
@@ -31,6 +31,13 @@
 		<a href="{{ url('/admin/course') }}">
 			<i class="fa fa-file-text-o"></i>
 			Course
+		</a>
+	</li>
+
+	<li class="list-group-item">
+		<a href="{{ url('/admin/lecture') }}">
+			<i class="fa fa-files-o"></i>
+			Lecture
 		</a>
 	</li>
 

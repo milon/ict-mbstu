@@ -1,7 +1,10 @@
-<?php  namespace App\Helpers\HtmlEditor\Summernote;
+<?php 
 
-use App\Helpers\HtmlEditor\HtmlEditor;
+namespace App\Helpers\HtmlEditor\Summernote;
+
 use File;
+use App\Helpers\HtmlEditor\HtmlEditor;
+
 class Summernote implements  HtmlEditor {
 
     /**
@@ -25,8 +28,8 @@ class Summernote implements  HtmlEditor {
     {
         if (!File::exists($dir)) {
             File::makeDirectory($dir);
-        }        
-        $this->uploadDir = $dir;        
+        }
+        $this->uploadDir = $dir;
     }
 
     /**
@@ -40,18 +43,18 @@ class Summernote implements  HtmlEditor {
     }
 
     /**
-     * Take summernote html code and return parsed html      
-     * 
+     * Take summernote html code and return parsed html
+     *
      * @param string $html
      * @return string
      */
     public function  parseHtml($html)
-    {              
+    {
         $imageUrls = [];
         $pattern = '/src=\"data:image\/.*?\"/';
         preg_match_all($pattern, $html, $matches);
         $destinationPath = $this->uploadDir . 'summernote_' . time() . '-' . \Auth::id();
-        
+
         $count = 0;
         foreach ($matches[0] as $imageTag) {
             $imageTag = preg_replace('/\"/', '', $imageTag);
@@ -64,7 +67,7 @@ class Summernote implements  HtmlEditor {
         $html = preg_replace_callback( $pattern, function($match) use( $imageUrls, &$count) {
             return ' src="' . $imageUrls[$count++] .'"';
         }, $html);
-        
+
         return $html;
     }
 

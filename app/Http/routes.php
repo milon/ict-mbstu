@@ -3,6 +3,8 @@
 // Frontend Routes
 Route::get('/', 'Frontend\PagesController@home');
 Route::get('/contact', 'Frontend\PagesController@contact');
+Route::get('/general-information', 'Frontend\PagesController@general');
+Route::get('/gallery', 'Frontend\PagesController@gallery');
 
 Route::get('/bsc-student', 'Frontend\PagesController@bsc');
 Route::get('/msc-student', 'Frontend\PagesController@msc');
@@ -16,6 +18,7 @@ Route::resource('/news', 'Frontend\NewsController', ['only' => ['index', 'show']
 Route::resource('/course', 'Frontend\CourseController', ['only' => ['index', 'show']]);
 Route::resource('/research_area', 'Frontend\ResearchAreaController', ['only' => ['index', 'show']]);
 Route::resource('/research_group', 'Frontend\ResearchGroupController', ['only' => ['index', 'show']]);
+Route::resource('/lecture', 'Frontend\LectureController', ['only' => ['index', 'show']]);
 
 // Authentication routes...
 Route::get('auth/login', 'Auth\AuthController@getLogin');
@@ -42,6 +45,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
     Route::resource('news', 'Admin\NewsController');
     Route::resource('research_area', 'Admin\ResearchAreaController', ['except' => 'show']);
     Route::resource('course', 'Admin\CourseController');
+    Route::resource('lecture', 'Admin\LectureController');
     Route::resource('research_group', 'Admin\ResearchGroupController');
 
     Route::resource('faculty', 'Admin\FacultyController');
